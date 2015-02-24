@@ -4,12 +4,10 @@ title: Argon.js Tutorials
 ---
 
 <h2>Tutorials</h2>
+<ol id="tutorials">
 {% for post in site.posts %}
-    {% if forloop.index == 0 %}
-    <ul>
-    {% endif %}
-    <li><a href='{{ post.url }}'>{{ post.title }}</a></li>
-    {% if forloop.index == site.posts.length %}
-    </ul>
-    {% endif %}
+    <li>
+    	<a href='{{ post.url }}'>{{ post.title }}</a>
+    	<p>{{ post.short_description }}</p></li>
 {% endfor %}
+</ol>
