@@ -31,7 +31,20 @@ body {
 	display: inline-block;
 	width: 1em;
 	float: left;
-	content: counter(item) ". ";
+	margin-right: 15px;
+	content: counter(item);
 	counter-increment: item;
 	font-size: 48px;
+
+	text-align: center;
+	color: #030;
+	background-color: #6b4;
+	border-radius: 50%;
+	border: 1px solid black;
+	transition: 150ms ease-out all;
+}
+
+#tutorials li:hover::before {
+	background-color: #4bf;
+	color: black;
 }
