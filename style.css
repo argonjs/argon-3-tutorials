@@ -6,7 +6,7 @@ body {
 	counter-reset: item;
 }
 
-#tutorials li {
+.tutorial-item {
 	display: block;
 	margin-bottom: 30px;
 	background-color: white;
@@ -27,13 +27,10 @@ body {
 	border-bottom: 2px solid #c80;
 }
 
-#tutorials li:before {
-	display: inline-block;
+.tutorial-item-number {
 	width: 1em;
 	float: left;
 	margin-right: 15px;
-	content: counter(item);
-	counter-increment: item;
 	font-size: 48px;
 
 	text-align: center;
@@ -41,10 +38,4 @@ body {
 	background-color: #6b4;
 	border-radius: 50%;
 	border: 1px solid black;
-	transition: 150ms ease-out all;
-}
-
-#tutorials li:hover::before {
-	background-color: #4bf;
-	color: black;
 }
