@@ -14,6 +14,7 @@ body {
 	padding: 10px;
 	border: 1px solid black;
 	border-radius: 10px;
+	box-shadow: 0 5px 0.5em #7DB4B5;
 }
 
 #tutorials a {
@@ -54,4 +55,5 @@ body {
 	margin: 20px;
 	padding: 10px;
 	border: 2px solid #680148;
+	box-shadow: 0 10px 1em #7DB4B5;
 }
