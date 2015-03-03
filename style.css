@@ -39,3 +39,17 @@ body {
 	border-radius: 50%;
 	border: 1px solid black;
 }
+
+.tutorial-heading {
+	font-size: 32px;
+	margin: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px dashed #333;
+}
+
+.tutorial-body {
+	background-color: white;
+	margin: 20px;
+	padding: 10px;
+	border: 2px solid black;
+}
