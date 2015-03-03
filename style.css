@@ -1,5 +1,6 @@
+/* Color Palette: http://www.colourlovers.com/palette/132637/Odd_but_trendy */
 body {
-	background-color: #eee;
+	background-color: #E0EFF1;
 }
 
 #tutorials {
@@ -20,11 +21,12 @@ body {
 	font-style: normal;
 	font-size: 20px;
 	font-family: sans-serif;
-	color: #c80;
+	color: #680148;
 }
 
 #tutorials a:hover {
-	border-bottom: 2px solid #c80;
+	color: green;
+	border-bottom: 2px solid green;
 }
 
 .tutorial-item-number {
@@ -35,7 +37,7 @@ body {
 
 	text-align: center;
 	color: #030;
-	background-color: #6b4;
+	background-color: #7DB4B5;
 	border-radius: 50%;
 	border: 1px solid black;
 }
@@ -44,12 +46,12 @@ body {
 	font-size: 32px;
 	margin: 20px;
 	padding-bottom: 20px;
-	border-bottom: 1px dashed #333;
+	border-bottom: 1px dashed #7DB4B5;
 }
 
 .tutorial-body {
 	background-color: white;
 	margin: 20px;
 	padding: 10px;
-	border: 2px solid black;
+	border: 2px solid #680148;
 }
