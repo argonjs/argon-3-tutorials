@@ -57,3 +57,10 @@ body {
 	border: 2px solid #680148;
 	box-shadow: 0 10px 1em #7DB4B5;
 }
+
+.highlight {
+	background-color: #ecf0f1;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}

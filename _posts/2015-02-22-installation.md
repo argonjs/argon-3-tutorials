@@ -5,7 +5,11 @@ date:   2015-02-22 13:35:15
 short_description: "This tutorial shows you how to get your Argon environment ready."
 ---
 
-Hello World!
+Setting Up The Camera
+---------------------
+The first thing that you should do in every Argon app is to set up the camera. In Argon, there are 2 cameras: the 3D camera and the physical camera. The 3D camera is the camera that shows the viewport, which renders virtual objects. Argon.js uses the same 3D camera from Three.js. The physical camera is the camera that is in the iPhone. It is used to render the real world.
+
+In order to produce Augmented Reality, we need to bind both cameras so that they act as one. In this case, your phone's camera will be your eye into the virtual world. Argon makes the process of binding cameras, as well as the gyroscope and other sensors, as easy as a function call.
 
 {% highlight js %}
 
@@ -24,54 +28,17 @@ three.scene.add(cameraLocation)
 
 {% endhighlight %}
 
-Hello People!
+Creating Virtual Objects
+------------------------
+
 
 {% highlight js %}
 
-// creating 6 divs to indicate the x y z positioning
-var divXpos = document.createElement('div')
-var divXneg = document.createElement('div')
-var divYpos = document.createElement('div')
-var divYneg = document.createElement('div')
+// creating 2 in opposite x y z positions
 var divZpos = document.createElement('div')
 var divZneg = document.createElement('div')
 
-// Put content in each one  (should do this as a couple of functions)
-// for X
-divXpos.id = "cssContent"
-divXpos.style.width = "100px"
-divXpos.style.height = "100px"
-divXpos.style.backgroundColor = "red"
-divXpos.style.position = 'absolute'
-divXpos.style.fontSize = "16px"
-divXpos.innerText = "Pos X = West"
-
-divXneg.id = "cssContent"
-divXneg.style.width = "100px"
-divXneg.style.height = "100px"
-divXneg.style.backgroundColor = "red"
-divXneg.style.position = 'absolute'
-divXneg.style.fontSize = "16px"
-divXneg.innerText = "Neg X = East"
-
-// for Y
-divYpos.id = "cssContent"
-divYpos.style.width = "100px"
-divYpos.style.height = "100px"
-divYpos.style.backgroundColor = "blue"
-divYpos.style.position = 'absolute'
-divYpos.style.fontSize = "16px"
-divYpos.innerText = "Pos Y = Up"
-
-divYneg.id = "cssContent"
-divYneg.style.width = "100px"
-divYneg.style.height = "100px"
-divYneg.style.backgroundColor = "blue"
-divYneg.style.position = 'absolute'
-divYneg.style.fontSize = "16px"
-divYneg.innerText = "Neg Y = Down"
-
-//for Z
+// Put content in each one div
 divZpos.id = "cssContent"
 divZpos.style.width = "100px"
 divZpos.style.height = "100px"
@@ -88,38 +55,11 @@ divZneg.style.position = 'absolute'
 divZneg.style.fontSize = "16px"
 divZneg.innerText = "Neg Z = South"
 
-
-// create 6 CSS Objects in the scene graph
-var cssObjectXpos = new THREE.CSS3DObject(divXpos)
-var cssObjectXneg = new THREE.CSS3DObject(divXneg)
-var cssObjectYpos = new THREE.CSS3DObject(divYpos)
-var cssObjectYneg = new THREE.CSS3DObject(divYneg)
+// create 2 CSS Objects in the scene graph
 var cssObjectZpos = new THREE.CSS3DObject(divZpos)
 var cssObjectZneg = new THREE.CSS3DObject(divZneg)
 
-// the width and height is used to align things.
-cssObjectXpos.position.x = 200.0
-cssObjectXpos.position.y = 0.0
-cssObjectXpos.position.z = 0.0
-cssObjectXpos.rotation.y = - Math.PI / 2
-
-cssObjectXneg.position.x = -200.0
-cssObjectXneg.position.y = 0.0
-cssObjectXneg.position.z = 0.0
-cssObjectXneg.rotation.y =  Math.PI / 2
-
-// for Y
-cssObjectYpos.position.x = 0.0
-cssObjectYpos.position.y = 200.0
-cssObjectYpos.position.z = 0.0
-cssObjectYpos.rotation.x = Math.PI / 2
-
-cssObjectYneg.position.x = 0.0
-cssObjectYneg.position.y = - 200.0
-cssObjectYneg.position.z = 0.0
-cssObjectYneg.rotation.x = - Math.PI / 2
-
-// for Z
+// Set the objects' positions
 cssObjectZpos.position.x = 0.0
 cssObjectZpos.position.y = 0.0
 cssObjectZpos.position.z = 200.0
@@ -130,10 +70,7 @@ cssObjectZneg.position.y = 0.0
 cssObjectZneg.position.z = -200.0
 //no rotation need for this one
 
-cameraLocation.add(cssObjectXpos)
-cameraLocation.add(cssObjectXneg)
-cameraLocation.add(cssObjectYpos)
-cameraLocation.add(cssObjectYneg)
+// Add the objects to the scene
 cameraLocation.add(cssObjectZpos)
 cameraLocation.add(cssObjectZneg)
 
