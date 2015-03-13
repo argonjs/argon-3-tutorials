@@ -2,5 +2,5 @@ name: Argon.js Tutorials
 markdown: redcarpet
 highlighter: pygments
 destination: _site/
-permalink: /tutorials/:title.html
+permalink: tutorials/:title.html
 description: Argon.js tutorial site.
