@@ -9,7 +9,7 @@ title: Argon.js Tutorials
     <div class="tutorial-item">
         <div class="tutorial-item-number">{{ forloop.index }}</div>
         <div class="tutorial-item-details">
-            <a href='{{ post.url }}'>{{ post.title }}</a>
+            <a href='{{ site.baseurl }}{{ post.url }}'>{{ post.title }}</a>
             <p>{{ post.short_description }}</p>
         </div>
     </div>
