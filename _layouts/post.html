@@ -6,14 +6,14 @@ layout: default
 <div id="page-navigation"> 
         <div class="left"> 
         {% if page.previous.url %} 
-                <a href="{{page.previous.url}}" title="Previous Post: 
+                <a href="{{ site.baseurl }}{{page.previous.url}}" title="Previous Post: 
 {{page.previous.title}}">&laquo; {{page.previous.title}}</a> 
         {% endif %} 
         </div> 
 
         <div class="right"> 
         {% if page.next.url %} 
-                <a href="{{page.next.url}}" title="next Post: 
+                <a href="{{ site.baseurl }}{{page.next.url}}" title="next Post: 
 {{page.next.title}}">{{page.next.title}} &raquo; </a> 
         {% endif %} 
         </div>
