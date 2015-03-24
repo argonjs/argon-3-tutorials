@@ -3,10 +3,6 @@ body {
 	background-color: #E0EFF1;
 }
 
-#tutorials {
-	counter-reset: item;
-}
-
 .tutorial-item {
 	display: block;
 	margin-bottom: 30px;
@@ -15,19 +11,6 @@ body {
 	border: 1px solid black;
 	border-radius: 10px;
 	box-shadow: 0 5px 0.5em #7DB4B5;
-}
-
-#tutorials a {
-	text-decoration: none;
-	font-style: normal;
-	font-size: 20px;
-	font-family: sans-serif;
-	color: #680148;
-}
-
-#tutorials a:hover {
-	color: green;
-	border-bottom: 2px solid green;
 }
 
 .tutorial-item-number {
@@ -41,6 +24,26 @@ body {
 	background-color: #7DB4B5;
 	border-radius: 50%;
 	border: 1px solid black;
+
+	transition: 250ms ease-out all;
+}
+
+.tutorial-item:hover .tutorial-item-number {
+	background-color: #7DD080;
+}
+
+
+#tutorials a {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 20px;
+	font-family: sans-serif;
+	color: #680148;
+}
+
+#tutorials a:hover {
+	color: green;
+	border-bottom: 2px solid green;
 }
 
 .tutorial-heading {
