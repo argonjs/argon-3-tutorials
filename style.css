@@ -67,3 +67,17 @@ body {
 	border: 1px solid #ccc;
 	border-radius: 3px;
 }
+
+#page-navigation {
+	clear: both;
+	overflow: hidden;
+	margin: 20px;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
