@@ -1,6 +1,63 @@
 /* Color Palette: http://www.colourlovers.com/palette/132637/Odd_but_trendy */
 body {
+	margin: 0;
 	background-color: #E0EFF1;
+}
+
+header {
+    margin: 0 auto;
+    padding: 10px 5px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #4D4485;
+    width: 100%;
+    background-color: #f7f7f7;
+    font-family: myriad-pro, sans-serif;
+    position: relative;
+    overflow: hidden;
+    box-sizing: BORDER-BOX;
+}
+
+#argon-banner {
+	float: left;
+	clear: left;
+	overflow: hidden;
+}
+
+#argon-banner img {
+	float: left;
+	margin-right: 20px;
+}
+
+#argon-banner h1 {
+	display: inline-block;
+	margin: 0px;
+	margin-top: 12px;
+}
+
+#nav {
+	float: right;
+	margin: 0px;
+	margin-top: 30px;
+	margin-right: 20px;
+	font-weight: bold;
+	color: #333;
+}
+
+#nav li a:visited {
+	color: #333;
+}
+
+#nav li a:hover {
+	border-bottom: 2px solid #006;
+}
+
+#nav li {
+	display: inline-block;
+	padding: 0px 15px;
+}
+
+#nav li a {
+	text-decoration: none;
 }
 
 .tutorial-item {
