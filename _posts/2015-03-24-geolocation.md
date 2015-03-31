@@ -40,7 +40,7 @@ var three = ARGON.THREE.Bootstrap(ARGON.immersiveContext, {
 ARGON.THREE.bind(new ARGON.Component.CameraTarget, three.camera);
 ```
 
-# Creating a GeoTarget
+## Creating a GeoTarget
 
 Now we create the GeoTarget, its just as simple as adding these few lines of code:
 ```
