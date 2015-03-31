@@ -112,7 +112,7 @@ header {
 
 .tutorial-body {
 	background-color: white;
-	margin: 20px;
+	margin: 0px 20px 20px 20px;
 	padding: 10px;
 	border: 2px solid #680148;
 	box-shadow: 0 10px 1em #7DB4B5;
@@ -128,7 +128,7 @@ header {
 #page-navigation {
 	clear: both;
 	overflow: hidden;
-	margin: 20px;
+	margin: 0px 20px;
 }
 
 .left {
@@ -137,4 +137,25 @@ header {
 
 .right {
 	float: right;
+}
+
+.page-navigation {
+	padding: 5px;
+	border: 2px solid #680148;
+	border-bottom: none;
+	background-color: white;
+}
+
+.page-navigation a {
+	background-color: white;
+	text-decoration: none;
+	color: navy;
+}
+
+.page-navigation a:visited {
+	color: navy;
+}
+
+.page-navigation a:hover {
+	border-bottom: 1px solid #480128;
 }
