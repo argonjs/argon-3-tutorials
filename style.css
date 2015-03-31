@@ -6,7 +6,7 @@ body {
 
 header {
     margin: 0 auto;
-    padding: 10px 5px;
+    padding: 10px 25px;
     margin-bottom: 30px;
     border-bottom: 1px solid #4D4485;
     width: 100%;
@@ -36,9 +36,8 @@ header {
 
 #nav {
 	float: right;
-	margin: 0px;
 	margin-top: 30px;
-	margin-right: 20px;
+	margin-bottom: 0px;
 	font-weight: bold;
 	color: #333;
 }
@@ -53,7 +52,7 @@ header {
 
 #nav li {
 	display: inline-block;
-	padding: 0px 15px;
+	margin: 0px 15px;
 }
 
 #nav li a {
