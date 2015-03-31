@@ -60,6 +60,10 @@ header {
 	text-decoration: none;
 }
 
+#content-wrapper {
+	margin: 0px 20px;
+}
+
 .tutorial-item {
 	display: block;
 	margin-bottom: 30px;
@@ -105,14 +109,14 @@ header {
 
 .tutorial-heading {
 	font-size: 32px;
-	margin: 20px;
-	padding-bottom: 20px;
+	margin: 20px 0px;
+	padding-bottom: 15px;
 	border-bottom: 1px dashed #7DB4B5;
 }
 
 .tutorial-body {
 	background-color: white;
-	margin: 0px 20px 20px 20px;
+	margin-bottom: 20px;
 	padding: 10px;
 	border: 2px solid #680148;
 	box-shadow: 0 10px 1em #7DB4B5;
@@ -128,7 +132,6 @@ header {
 #page-navigation {
 	clear: both;
 	overflow: hidden;
-	margin: 0px 20px;
 }
 
 .left {
