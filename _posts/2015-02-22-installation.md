@@ -31,7 +31,7 @@ three.scene.add(cameraLocation)
 
 Creating Virtual Objects
 ------------------------
-
+As this is HTML, all objects are HTML elements. To create 3D objects, we will first create div elements using document.createElement('div'). Then, we style them using their style attributes. Note that this can also be done using classes and CSS. To make the elements appear in 3D, we should wrap each element in a Three.js CSS3DObject and then move or rotate it in the 3D world. When that is done, we add the CSS3DObject objects to the camera location object so that they are placed relative to the phone's camera.
 
 {% highlight js %}
 
@@ -76,5 +76,3 @@ cameraLocation.add(cssObjectZpos)
 cameraLocation.add(cssObjectZneg)
 
 {% endhighlight %}
-
-Yo wazzup?
