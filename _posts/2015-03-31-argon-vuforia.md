@@ -31,7 +31,7 @@ If you haven't read about
 
 To quickly make an argon app you just need to write up a quick HTML boiler plate:
 
-```HTML
+{% highlight HTML %}
 <!doctype html>
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
@@ -49,11 +49,11 @@ To quickly make an argon app you just need to write up a quick HTML boiler plate
   We will fill in our argon code here
 */
 </script>
-```
+{% endhighlight %}
 
 ## An argon.js boilerplate
 
-```Javascript
+{% highlight js %}
   var options = THREE.Bootstrap.createArgonOptions( ARGON.immersiveContext )
   var three = THREE.Bootstrap( options )
 
@@ -66,7 +66,7 @@ To quickly make an argon app you just need to write up a quick HTML boiler plate
   var cameraLocation = new THREE.Object3D
   three.argon.bindComponent(cameraLocationTarget, new THREE.Object3D)
   three.scene.add(cameraLocation)
-```
+{% endhighlight %}
 
 The first two lines give you a THREE.js instance that gets integrated straight into Argon!
 Next we bind our physical camera to the THREE's camera, to line up the views and make the AR believable.
@@ -77,7 +77,7 @@ Finally we create a THREE object that is bound to our camera's location ( by fil
 ## Lets light up the room
 Lets add a light source to our scene and create a *very* generic box.
 
-```Javascript
+{% highlight js %}
   // add light
   var light = new THREE.DirectionalLight( 0xffffff, 1 )
 	light.position.set( 0, -4, -4 ).normalize()
@@ -89,52 +89,52 @@ Lets add a light source to our scene and create a *very* generic box.
   var box = new THREE.Mesh(new THREE.BoxGeometry(50, 50, 50), new THREE.MeshNormalMaterial())
   box.position.z = 25
   var boxSpin = 0
-```
+{% endhighlight %}
 
 ## The exciting part: Vuforia
 
 First we can check if our client supports Vuforia (it most likely will):
 
-```Javascript
+{% highlight js %}
 if (ARGON.System.Vuforia) {
   // We have Vuforia!!!
 } else {
   // No Vuforia available :(
 }
-```
+{% endhighlight %}
 
 Argon also provides a way to load Vuforia data sets (the zip file containing the .xml & .dat files).
 Unzip that dataset folder and place in a directory on your server, make sure you keep the .xml and .dat files together (in the same directory).
 
 Lets load our Vuforia Dataset:
 
-```Javascript
+{% highlight js %}
 // My dataset is called StonesAndChips, and its in the dataset folder:
 ARGON.System.Vuforia.loadAndActivateDataSet('dataset/StonesAndChips.xml')
-```
+{% endhighlight %}
 
 To get a certain target ( like a picture of a bunch of stones ) we can use ARGON.Component
 
-```Javascript
+{% highlight js %}
 // Get the Stones Target
 var stonesTarget = new ARGON.Component.VuforiaImageTarget({name:'stones'})
-```
+{% endhighlight %}
 
 Now we create a THREE.Object3D that will be attatched to the target when Vuforia tracks it:
 
-```Javascript
+{% highlight js %}
 var stones = new THREE.Object3D
 three.argon.bindComponent(stonesTarget, stones)
 stones.name = "stones"
 three.scene.add(stones)
-```
+{% endhighlight %}
 
 The above code creates a THREE.Object3D and binds it to our target, we give it a name so we can find it later.
 Finally we add it to the scene.
 
 Next we make use of our listeners to make our box visible when we find the target (effectively attatching it to the target) and detaching it when we lose visibility.
 
-```Javascript
+{% highlight js %}
 stones.addEventListener('found', function() {
   stones.add(box)
   boxSpin = 10
@@ -142,20 +142,20 @@ stones.addEventListener('found', function() {
 stones.addEventListener('lost',  function() {
   stones.remove(box)
 })
-```
+{% endhighlight %}
 
 ## Animating the box!
 
 We can animate this cube to make it slightly more exciting!
 
-```
+{% highlight js %}
 three.on('update', function() {
   // animate the cube
   box.rotation.z += boxSpin * three.Time.delta
   if (boxSpin > 0) boxSpin -= 10 * three.Time.delta
   else             boxSpin = 0
 })
-```
+{% endhighlight %}
 
 ## Final Words
 
