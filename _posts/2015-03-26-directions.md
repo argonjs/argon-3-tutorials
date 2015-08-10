@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Skybox"
+title:  "Directions"
 date:   2015-03-26 13:35:15
-short_description: "This tutorial shows you how to use Argon.js and Three.js to implement a skybox panorama."
-source_directory: tutorial3
+short_description: "This channel demonstrates how to position content in space relative to the camera."
+source_directory: tutorial4
 ---
 
 Skybox Tutorial

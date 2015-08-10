@@ -5,4 +5,3 @@ destination: _site/
 permalink: tutorials/:title.html
 description: Argon.js tutorial site.
 baseurl: /pages/ael/argon-tutorials
-paginate: 5
