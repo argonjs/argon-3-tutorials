@@ -12,7 +12,7 @@ The Argon3 browser allows the developer to place 3D content in the world for dis
 
 This example illustrates both ways of locating content: 1. It finds the current location of the viewer and positions a cube at a well-known nearby location (the Georgia Tech campus, for us). This cube is covered with a texture of Buzz, the Georgia Tech mascot.  2. It creates a second cube a small distance away from where the user was positioned when the example was loaded.  It does this by adding a small amount to the user's current east-west location, in the local taronhree.js cartesian coordinates.  This illustrates how to create geospatial content based on the current location and update the internal geospatial location of the object.
 
-# Main file (index.html)
+## Main file (index.html)
 
 In the index.html, the body tag is in two parts.  The "argon-immersive-context" div is used to create a small dynamic information box at the bottom of the screen that will track the user's location and the position of the two objects.  Text outside this special div is rendered only when the user enters "Page Mode" by touched the icon in the top right corner of the interface. In this case,  the text in Page Mode offers an explanation of the example that appears on the screen over the background context. 
 
@@ -28,7 +28,7 @@ In the index.html, the body tag is in two parts.  The "argon-immersive-context"
 </body>
 {% endhighlight %}
 
-# Code file (app.js)
+## Code file (app.js)
 
 As indicated in 1-Getting Started, we place the javascript itself in a separate file: app.js.  In the javascript file, we first initialize the immersive context and *three.js* (using the threestrap bootstrapping library):
 
@@ -44,7 +44,7 @@ Next we create two geospatial objects to display in the application. One of the 
 As explained in the Overview, every geospatial object has two components: a Cesium Entity (which determines its location) and a *three.js* Object3D (which determines its characteristics as a 3D object, such as shape and texture). 
 
 
-# The "Buzz" cube positioned at Georgia Tech
+## The "Buzz" cube positioned at Georgia Tech
 
 First we use *three.js* to create a large cube 10mx10mx10m  and attach the Buzz texture.  This cube has the variable name buzz.
 
@@ -77,7 +77,7 @@ Finally we create the *argon.js* object that is linked to this Cesium Entity and
   gatechGeoTarget.add(buzz);
 {% endhighlight %}
 
-# The  wooden box (position moves with the camera)
+## The  wooden box (position moves with the camera)
 
 We now create the second object:  a 1mx1mX1m cube with a wooden texture. (This wooden texture comes from https://www.flickr.com/photos/photoshoproadmap/8640003215/sizes/l/in/photostream/, licensed under https://creativecommons.org/licenses/by/2.0/legalcode)
 
@@ -108,7 +108,7 @@ The boxGeoObject is the object that we will move around (and box will move with 
  var boxGeoEntity = three.argon.entityFromObject(boxGeoObject);
 {% endhighlight %}
 
-#The  argon:realityChange event
+## The argon:realityChange event
 
 Finally we create two event handlers. One is for assigning and changing the Reality (the background view) that the application will use.  An *argon.js* context consists of AR content and a Reality (See the Background for a futher explanation.)   Each time the Context is assigned a new Reality, including the first time, we receive a "realityChange" event.  The application should do initialization that is based on the state of the world here. *argon.js* has a state parameter with the following entries:
 
@@ -137,7 +137,7 @@ Finally we create two event handlers. One is for assigning and changing the Real
 
 {% endhighlight %}
 
-# The update event
+## The update event
 
 Our second event listener is code that we want to fire each time three.js  updates (redraws) the scene. In this example, we update the screen element with the current numerical information  (lat and lon of the camera etc.)  We also make the boxes rotates for visual interest. This update event is where the developer can put anything that needs to change dynamically every time the scene is redrawn. 
  *argon.js*'s update state is stored in the threestrap update event.argonState field. In general, this is only needed if you need to know lower-level information from  *argon.js* , such as the raw geolocation, which we grab and print in a div on the bottom of the screen.
@@ -223,3 +223,5 @@ Note that we do not read or assign text to the DOM element itself until the very
       elem.innerText = infoText;
       lastInfoText = infoText;   
    {% endhighlight %}
+   
+This tutorial (2) shoued how to position geoObjects using GPS. In the next tutorial (3), we will see how to position objects using Vuforia's image tracking system:  ([Vuforia](vuforia.html)). 
