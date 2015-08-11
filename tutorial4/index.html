@@ -1,103 +1,17 @@
 <!doctype html>
-<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-
-<title>Vuforia</title>
-
-<script src="../../vendor/three.js"></script>
-<script src="../../vendor/threestrap.js"></script>
-<script src="../../dist/argon.js"></script>
-<script src="../../dist/argon-three.js"></script>
-
-<script src="../../vendor/ColladaLoader.js"></script>
-
-<body></body>
-
-<script>
-
-  var options = THREE.Bootstrap.createArgonOptions( ARGON.immersiveContext )
-  var three = THREE.Bootstrap( options )
-
-  // bind a camera target to our camera
-  three.argon.bindComponent(new ARGON.Component.CameraTarget, three.camera)
-
-  // create a camera target that only uses the camera's position
-  var cameraLocationTarget = new ARGON.Component.CameraTarget
-  cameraLocationTarget.setFilter(ARGON.filters.onlyPosition)
-  var cameraLocation = new THREE.Object3D
-  three.argon.bindComponent(cameraLocationTarget, new THREE.Object3D)
-  three.scene.add(cameraLocation)
-
-  // add light
-  var light = new THREE.DirectionalLight( 0xffffff, 1 )
-	light.position.set( 0, -4, -4 ).normalize()
-	three.scene.add( light )
-  var pointLight = new THREE.PointLight( 0xffffff, 1.5, 1000 )
-  three.camera.add(pointLight)
-
-  // create a box
-  var box = new THREE.Mesh(new THREE.BoxGeometry(50, 50, 50), new THREE.MeshNormalMaterial())
-  box.position.z = 25
-  var boxSpin = 0
-
-  // if we have Vuforia available
-  if (ARGON.System.Vuforia) {
-    ARGON.System.Vuforia.loadAndActivateDataSet('dataset/StonesAndChips.xml')
-
-    // create a stones target and add the box to it
-    var stonesTarget = new ARGON.Component.VuforiaImageTarget({name:'stones'})
-    var stones = new THREE.Object3D
-    three.argon.bindComponent(stonesTarget, stones)
-    stones.name = "stones"
-    three.scene.add(stones)
-    stones.addEventListener('found', function() {
-      stones.add(box)
-      boxSpin = 10
-    })
-    stones.addEventListener('lost', function() {
-      stones.remove(box)
-    })
-
-    // create a chips target, which the character can add itself to
-    var chipsTarget = new ARGON.Component.VuforiaImageTarget({name:'chips'})
-    var chips = new THREE.Object3D
-    three.argon.bindComponent(chipsTarget, chips)
-    chips.name = "chips"
-    three.scene.add(chips)
-
-  } else {
-    // TODO: do something more interesting on the desktop
-    ARGON.immersiveContext.element.textContent =
-      "Vuforia is not available on this platform"
-  }
-
-  // load the character
-  var loader = new THREE.ColladaLoader()
-  loader.load( "./avatar.dae", function ( collada ) {
-    collada.scene.traverse( function ( child ) {
-      if ( child instanceof THREE.SkinnedMesh ) {
-        var animation = new THREE.Animation( child, child.geometry.animation );
-        animation.play()
-      }
-    })
-    collada.scene.scale.set(100,100,100)
-    if (chips) {
-      chips.addEventListener('found', function() {
-        chips.add(collada.scene)
-      })
-      chips.addEventListener('lost', function() {
-        chips.remove(collada.scene)
-      })
-    }
-  })
-
-  three.on('update', function() {
-    // animate the character
-    THREE.AnimationHandler.update( three.Time.delta );
-    // animate the cube
-    box.rotation.z += boxSpin * three.Time.delta
-    if (boxSpin > 0) boxSpin -= 10 * three.Time.delta
-    else boxSpin = 0
-  })
-
-
-</script>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  
+  <title>Directions</title>
+  
+  <script src="../../vendor/three.js"></script>
+  <script src="../../vendor/threestrap.js"></script>
+  <script src="../../argon.js"></script>
+  <script src="../../argon-three.js"></script>
+  
+  <body style="background-color:rgba(255,255,255,0.7)">
+    <h2>Six directions example</h2>
+    <p>This example displays the reference frame around the camera in Cartesian coordinates (x, y, x). It puts a image in the negative and positive directions: x is left/right; y is up/down; z is back front. A div is created in each of these directions and converted to cssObject (in three.js) at  200 units from the origin. These cssObjects are then added to the eyeOrigin. The eyeOrigin is the position of the camera: the cssObjects will always appear in the same locations relative to the camera. </p>  
+  </body>
+  
+  <script src="./app.js"></script>
+</html>
