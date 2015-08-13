@@ -6,172 +6,117 @@ short_description: "This channel demonstrates how to position content in space r
 source_directory: tutorial4
 ---
 
-Skybox Tutorial
---------------------
-By default Argon will display whatever your phone's camera is capturing as a background, and for many apps this behavior is fine or even desirable. However, in some cases you might want to use a custom backdrop for an Argon app. This tutorial will demonstrate how Argon and Three.js can be used together to render a skybox panorama in the background of an Argon app.
+This example demonstrates how to position content in space relative to the camera, which the user can view around her when she loads the application into Argon3.
 
-Camera Setup
---------------------
-To do almost any 3D rendering in Argon you will probably want to set up Three.js's camera to be bound to your phone's physical camera. This process was covered in the first tutorial, but in case you skipped that tutorial or need a refresher, here is code for binding the Three.js camera to Argon's camera information.
+## Main file (index.html)
+
+In the index.html file, we explain what the example does in the body tag: this will appear when the user enters Page Mode.  
+
+{% highlight html %}
+
+  <body style="background-color:rgba(255,255,255,0.7)"> 
+    <h2>Six directions example</h2> 
+    <p>This example displays the reference frame around the camera in Cartesian coordinates (x, y, x). It puts a image in the negative and positive directions: x is left/right; y is up/down; z is back front. A div is created in each of these directions and converted to cssObject (in three.js) at  600 units from the origin. These cssObjects are then added to the eyeOrigin. The eyeOrigin is the position of the camera: the cssObjects will always appear in the same locations relative to the camera. </p>   
+  </body>
+  
+{% endhighlight %}
+
+As with our other examples, all the javascript code is placed in app.js.
+
+## Code file (app.js)
+
+This example (like the next one, Periodic table) is adapted and simplified from the  *three.js* periodic table example. For the original version, see http://threejs.org/examples/#css3d_periodictable. 
+ 
+We start by initializing (see 1-Getting Started). 
 
 {% highlight js %}
 
-var options = THREE.Bootstrap.createArgonOptions(ARGON.immersiveContext)
-options.renderer = { klass: THREE.CSS3DRenderer }
-var three = THREE.Bootstrap(options)
-
-three.argon.bindComponent(new ARGON.Component.CameraTarget, three.camera)
-
-var cameraLocationTarget = new ARGON.Component.CameraTarget
-cameraLocationTarget.setFilter(ARGON.filters.onlyPosition)
-
-var cameraLocation = new THREE.Object3D
-three.argon.bindComponent(cameraLocationTarget, cameraLocation)
-three.scene.add(cameraLocation)
-
+var options = THREE.Bootstrap.createArgonOptions( Argon.immersiveContext ); 
+options.renderer = { klass: THREE.CSS3DRenderer }; 
+var three = THREE.Bootstrap( options ); 
+var eyeOrigin = three.argon.objectFromEntity(Argon.immersiveContext.eyeOrigin);
 {% endhighlight %}
 
-Creating and Drawing the Panorama
---------------------
-Once the camera is set up, rendering a skybox is fairly straightforward. There are multiple ways to render a skybox in Three.js, but this tutorial will only cover one simple method. Since a skybox is simply a cube with different textures on each face, an obvious way to create a Skybox is to use a [MeshFaceMaterial](http://threejs.org/docs/#Reference/Materials/MeshFaceMaterial), where each material corresponds to a different side of the skybox cube. The code to create a skybox using this method is shown below.
+eyeOrigin is the Argon object linked to the (Argon-Cesium) Entity that contains the position of the camera. All the 6 objects that we will create will be positioned relative to eyeOrigin. 
+
+##Creating and placing the 6 directional signs around the camera / user
+
+Table is an array of arrays; each inner array contains information for one of the six direction signs to be created.  The first three elements in the array consist of textual information that will be displayed on the sign; the next three specify the x-y-z displacement from the camera (in meters); the last three are the x-y-z values of the rotation vector for the sign. The sign needs to be rotated so that the front faces the user / camera. 
 
 {% highlight js %}
-
-//texture filenames for the panorama - depending on how the panorama was created, the ordering of each side may vary
-//obviously the filenames here are placeholders 
-var images = [
-	"image_front.png",
-	"image_back.png",
-	"image_top.png",
-	"image_bottom.png",
-	"image_left.png",
-	"image_right.png"
-]
-
-//this array will store each material
-var materials = [];
-
-for (var i = 0; i < 6; i++) {
-	//load the image for a face's material
-	var tex = new THREE.ImageUtils.loadTexture(images[i])
-	tex.onLoad = function() {
-		tex.needsUpdate = true
-	}
-
-	//notice the use of THREE.BackSide - since the camera is viewing the skybox from the inside of the cube,
-	//the back of each face must be rendered rather than the front
-	materials.push(new THREE.MeshBasicMaterial({color: 0xffffff, map: tex, side: THREE.BackSide}))
-}
-
-//create the skybox geometry and use the MeshFaceMaterial as its material
-var skybox = new THREE.Mesh(new THREE.BoxGeometry(100, 100, 100), new THREE.MeshFaceMaterial(materials));
-
-//add the cube to the scene relative to the cameraLocation Object3D so that it is guaranteed that the skybox will
-//surround the camera even if the user moves around
-cameraLocation.add(skybox)
-
+var table = [ 
+    [ "N", "North", "(Negative Z)", 0, 0, -600, 0, 0, 0], 
+    [ "S", "South", "(Positive Z)", 0, 0, 600, 0, Math.PI, 0  ], 
+    [ "E", "East", "(Positive X)", 600, 0, 0, 0, -Math.PI/2, 0 ], 
+    [ "W", "West", "(Negative X)", -600, 0, 0, 0, Math.PI/2, 0 ], 
+    [ "U", "Up", "(Positive Y)", 0, 600, 0, Math.PI/2, 0, 0 ], 
+    [ "D", "Down", "(Negative Y)", 0, -600, 0, Math.PI/2,  Math.PI, Math.PI] 
+  ];
 {% endhighlight %}
 
-One of the most intesting aspects of this code snippet is that the vast majority of the code is not specific to Argon. Loading the textures, creating the panorama material, and creating the actual skybox cube are all done with standard Three.js functionality. In fact, the only line that is Argon-specific is adding the skybox geometry to the Three.js scene, where the information about the user's physical location that Argon.js provides is used to ensure that the skybox will always surround the camera's position.
-
-Using Argon Backgrounds
---------------------
-When put together, all of the code shown so far will display a skybox panorama simply by creating a textured cube in 3D space around the user's current location. However, this simple approach has some drawbacks. The skybox created using this method has a fixed size, so any 3D objects placed outside of the cube will be clipped by the skybox and hidden, which is probably not desirable behavior. Making the skybox larger can temporarily fix this problem, but a much better solution would be to display the skybox in the background of the scene at all times, so that it can't possibly hide any other geometry. Fortunately Argon provides the functionality necessary to achieve this solution through the ARGON.Background object, which allows the user to create a customized background for any Argon app.
-
-Creating a custom Argon background object takes a little bit more work than simply dropping a skybox cube into the Three scenegraph, but luckily most of the code shown so far can be reused. There are three components to an Argon background that need to be implemented to create a customized background: an initialization function to set up the background, an array of Javascript dependencies used by the background, and most importantly a rendering function to handle drawing and updating the background. Here is the code for the ARGON.Background object, with each of those three components being passed into its constructor (warning: it's fairly long, but hopefully some of it will look familiar).
+We create a root object in *three/js*, to which we attach all the others. 
 
 {% highlight js %}
-
-var panorama = new ARGON.Background({
-	init: function() {
-		var displayFrame = ARGON.ReferenceFrame.subscribe('display')
-		displayFrame.on('pushState', function(state) {
-			this.frame.pushState(state)
-			this.update(state.timestamp)
-		}.bind(this))
-	},
-	jsDeps:[
-		'../../vendor/three.js',
-		'../../vendor/threestrap.js'
-	],
-	renderScript: function(port) {
-		var three = THREE.Bootstrap()
-
-		var blankCanvas = document.createElement('canvas')
-		blankCanvas.width = 256
-		blankCanvas.height = 256
-
-		var texture = new THREE.Texture(blankCanvas)
-		texture.needsUpdate = true
-
-		var materials = [];
-		for (var i = 0; i < 6; i++) {
-			materials.push(new THREE.MeshBasicMaterial({map: texture, side: THREE.BackSide}))
-		}
-
-		var skybox = new THREE.Mesh(new THREE.BoxGeometry(100, 100, 100),
-				new THREE.MeshFaceMaterial(materials))
-
-		three.scene.add(skybox)
-
-		port.on('resize', function() {
-			three.plugins.size.queue(null, three)
-		})
-
-		three.camera.matrixAutoUpdate = false
-
-		port.on('update', function(e) {
-			three.camera.fov = e.state.fov
-			three.camera.updateProjectionMatrix()
-			three.camera.matrix.fromArray(e.transform)
-			three.camera.matrix.setPosition({x: 0, y: 0, z: 0})
-			three.camera.matrixWorldNeedsUpdate = true
-		})
-
-		var options = null
-		port.on('options', function(e) {
-			options = e.options
-			if (e.options.source.skybox) {
-				_loadSkybox()
-			}
-		})
-
-		THREE.ImageUtils.crossOrigin = 'anonymous';
-
-		var _loadSkybox = function() {
-			var images = options.source.skybox
-
-			for (var i = 0; i < 6; i++) {
-				var tex = new THREE.ImageUtils.loadTexture(images[i])
-				tex.onLoad = function() {
-					tex.needsUpdate = true
-				}
-
-				materials[i] = new THREE.MeshBasicMaterial({map: tex, side: THREE.BackSide})
-			}
-		}
-	}
-})
-
+  var objects = [] 
+  var root = new THREE.Object3D()
 {% endhighlight %}
 
-This code will give us an ARGON.Background object named panorama that is capable of displaying skybox panoramas. To understand how it does this, we need to examine the arguments passed into the constructor. First, the init function is given, which sets up the background to receive updates when Argon detects changes in its reference frame (such as a change in orientation or the user moving around with their phone). The jsDeps argument should be fairly self-explanatory: it is an array of locations to access resources the Background depends on. The most important argument is the renderScript function, since it is responsible for drawing and updating the background image. First the function sets up a blank texture to draw on the skybox if no images are supplied by the user and then uses that texture to setup an array of materials which is passed into the skybox mesh's constructor. This is all fairly similar to the code used to initialize the skybox earlier, except that we initially default to a blank texture since the actual panorama images are now passed into the object later. After this are three functions to update the state of the background in various situations: when the screen is resized, when Argon's state is updated, and when the options for the background are updated. The state update function is what keeps Three.js's camera aligned with Argon's information about the phone's physical camera, which is why this code does not need to use the specialized bootstrapping code we had to use to create a panorama without using an Argon Background. The function responding to updates to the options variable is very important, as it allows the actual skybox images are passed to the background by specifying an options.source.skybox variable, which will be an array of images for the skybox. The function called to load the skybox once the options variable has been updated should look very familiar, as it is creating textures for each of the six sides of the cube as shown in the earlier code snippet. Now that the code should make some sense, here is how to actually use the panorama object it creates.
+We loop through the table, creating the divs that make up each sign. 
 
 {% highlight js %}
-
-panorama.setOptions({source: {skybox: [
-	ARGON.Util.resolveURL('image1.png'),
-	ARGON.Util.resolveURL('image2.png'),
-	ARGON.Util.resolveURL('image3.png'),
-	ARGON.Util.resolveURL('image4.png'),
-	ARGON.Util.resolveURL('image5.png'),
-	ARGON.Util.resolveURL('image6.png')
-]}})
-
-ARGON.immersiveContext.requestBackground(panorama).catch(function(e) {
-	console.log(e)
-})
-
+  for ( var i = 0; i < table.length; i ++ ) { 
+    var item = table[ i ]; 
+ 
+    var element = document.createElement( 'div' ); 
+    element.className = 'element'; 
+    element.style.backgroundColor = 'rgba(200,120,200,1)'; 
+ 
+    var symbol = document.createElement( 'div' ); 
+    symbol.className = 'symbol'; 
+    symbol.textContent = item[ 0 ]; 
+    element.appendChild( symbol ); 
+ 
+    var details = document.createElement( 'div' ); 
+    details.className = 'details'; 
+    details.innerHTML = item[ 1 ] + '<br>' + item[ 2 ]; 
+    element.appendChild( details );
 {% endhighlight %}
 
-First this code sets the options for the panorama so that the Background object will load the images onto the skybox. Then, to actually display the background, simply call ARGON.immersiveContext.requestBackground with the Background object as the parameter (in this case the custom background we created earlier). The catch function added on to this function call will catch and log any errors that occur when switching backgrounds.
+Here we create the 3D object from the div element, push it on a stack for use later, and then add the new object to the root object.
+
+{% highlight js %}
+   var object = new THREE.CSS3DObject( element ); 
+   object.matrixAutoUpdate = false; 
+   objects.push( object ); 
+   root.add(object);
+{% endhighlight %}
+
+The root object now has all six of the sign; so we attach it to the eyeOrigin. 
+
+{% highlight js %}
+eyeOrigin.add(root);
+{% endhighlight %}
+
+Finally we loop through and position the six sign objects at the compass points by copying the position vector from the table array into the object.  We also rotate each sign so that it faces the camera/user.
+
+{% highlight js %}
+   for ( var i = 0; i < objects.length; i ++ ) { 
+    var item = table[ i ]; 
+    var target = new THREE.Object3D(); 
+    // three position values 
+    target.position.x = item[ 3 ]; 
+    target.position.y = item[ 4 ]; 
+    target.position.z = item[ 5 ]; 
+    //the three axes of rotation 
+   target.rotation.x = item[ 6 ];      
+   target.rotation.y = item[ 7 ];   
+   target.rotation.z = item[ 8 ];   
+     
+    object = objects[ i ]; 
+    object.position.copy(target.position); 
+    object.rotation.copy(target.rotation); 
+    object.updateMatrix(); 
+  } 
+{% endhighlight %}
+
+Because all the objects are placed relative to the eyeOrigin, they will move with the user/camera. In the next tutorial-example (5-Periodic), we show a more elaborate version of this same idea and also illustrates how the user can interact with 3D objects through the use of buttons on the screen. 
