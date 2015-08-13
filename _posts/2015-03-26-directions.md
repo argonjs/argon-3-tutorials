@@ -101,21 +101,21 @@ Finally we loop through and position the six sign objects at the compass points 
 
 {% highlight js %}
    for ( var i = 0; i < objects.length; i ++ ) { 
-    var item = table[ i ]; 
-    var target = new THREE.Object3D(); 
-    // three position values 
-    target.position.x = item[ 3 ]; 
-    target.position.y = item[ 4 ]; 
-    target.position.z = item[ 5 ]; 
-    //the three axes of rotation 
-   target.rotation.x = item[ 6 ];      
-   target.rotation.y = item[ 7 ];   
-   target.rotation.z = item[ 8 ];   
+      var item = table[ i ]; 
+      var target = new THREE.Object3D(); 
+      // three position values 
+      target.position.x = item[ 3 ]; 
+      target.position.y = item[ 4 ]; 
+      target.position.z = item[ 5 ]; 
+      //the three axes of rotation 
+      target.rotation.x = item[ 6 ];      
+      target.rotation.y = item[ 7 ];   
+      target.rotation.z = item[ 8 ];   
      
-    object = objects[ i ]; 
-    object.position.copy(target.position); 
-    object.rotation.copy(target.rotation); 
-    object.updateMatrix(); 
+      object = objects[ i ]; 
+      object.position.copy(target.position); 
+      object.rotation.copy(target.rotation); 
+      object.updateMatrix(); 
   } 
 {% endhighlight %}
 
