@@ -46,13 +46,9 @@ When you are ready to test the code that you have written, use your Terminal to 
  
     gulp dev 
   
-This will set up the server to run on your computer. In order to debug, your computer and your phone must be on the same local area network. Find the ip address of your computer. (On a Mac you can find this address by looking at the Network utility under System Preferences.)   
+This will set up the server to run on your computer. In order to debug, your computer and your phone must be on the same local area network. Find the ip address of your computer. (On a Mac you can find this address by looking at the Network utility under System Preferences.) To simply see your application running, open Argon on your phone and enter `<your-ip-address>:1337`.  (The server will be serving  your application on port 1337.)  To debug your application, there are two steps:  
  
-* To simply see your application running, open Argon on your phone and enter `<your-ip-address>:1337`.  (The server will be serving  your application on port 1337.) 
- 
-* To debug your application, there are two steps:  
- 
-1, ON YOUR COMPUTER: Type the path name of your index.html file into your Safari or Chrome browser. In this case you would type: <your-ip-address>:1337/my-argon-project/index.html 
+1. ON YOUR COMPUTER: Type the path name of your index.html file into your Safari or Chrome browser. In this case you would type: <your-ip-address>:1337/my-argon-project/index.html 
     
 2. ON YOUR PHONE:  type <your-ip-address>:1337/debug 
  
