@@ -28,7 +28,7 @@ To use the Argon generator, do the following. Note that all the commands below a
  
 2. Install gulp, jspm, yo, and generator-argon: The node package manager is used to  download the other packages needed: gulp, jspm,  yo (from yeoman), and our package, generator-argon. This command will download all four and install them so that they are available from any directory on your machine (-g) 
  
-    npm install -g gulp jspm yo generator-argon 
+        npm install -g gulp jspm yo generator-argon 
   
 Depending on the speed of your connection and machine, these installations may take many minutes to complete. Once these steps are complete (without error messages), you can use yeoman to bootstrap a new Argon project, as shown below.   
  
@@ -52,9 +52,9 @@ This will set up the server to run on your computer. In order to debug, your com
  
 * To debug your application, there are two steps:  
  
-ON YOUR COMPUTER: Type the path name of your index.html file into your Safari or Chrome browser. In this case you would type: <your-ip-address>:1337/my_argon_project/index.html 
+1, ON YOUR COMPUTER: Type the path name of your index.html file into your Safari or Chrome browser. In this case you would type: <your-ip-address>:1337/my_argon_project/index.html 
     
-ON YOUR PHONE:  type <your-ip-address>:1337/debug 
+2. ON YOUR PHONE:  type <your-ip-address>:1337/debug 
  
 This two urls should succeed in connecting your phone to the computer. The computer browser will display all the 3D and html content of your application. It will not, however, be able to display the background video from the phone's camera. Instead you will see the 3D objects and html against a white background. The phone will provide the orientation and position input. As you move the phone around, the content of your application will respond just as they would in the normal operation of your application on the phone. Also, you can use any of the debugging features of Safari or Chrome to examine the code and check for errors.  
  
@@ -82,8 +82,8 @@ To simply see your application running, open Argon on your phone and enter `<you
  
 To debug your application, there are two steps:  
  
-ON YOUR COMPUTER: Type the path name of your index.html file into your Safari or Chrome browser. In this case you would type: <your-ip-address>:1337/my_argon_project/www/index.html (or whatever the pathname is) 
+1. ON YOUR COMPUTER: Type the path name of your index.html file into your Safari or Chrome browser. In this case you would type: <your-ip-address>:1337/my_argon_project/www/index.html (or whatever the pathname is) 
     
-ON YOUR PHONE:  type <your-ip-address>:1337/debug 
+2. ON YOUR PHONE:  type <your-ip-address>:1337/debug 
  
 These two urls should succeed in connecting your phone to the computer. The computer browser will display all the 3D and html content of your application. It will not, however, be able to display the background video from the phone's camera. Instead you will see the 3D objects and html against a white background. The phone will provide the orientation and position input. As you move the phone around, the content of your application will respond just as they would in the normal operation of your application on the phone. Also, you can use any of the debugging features of Safari or Chrome to examine the code and check for errors. 
