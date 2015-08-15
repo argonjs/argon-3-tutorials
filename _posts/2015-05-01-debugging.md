@@ -16,9 +16,9 @@ The Argon3 debugger uses node.js (the open source, runtime environment for serve
  
 The system described here can be used in two ways:  
  
-Case 1: to generate a shell for new project that you are starting. This shell will consists of folders and files to help you structure the project according to current best practices: separating the html from the code (as we showed you in the preceding examples) and also providing dynamic links to help ensure that the argon.js and other resources stay up to date. 
+1. to generate a shell for new project that you are starting. This shell will consists of folders and files to help you structure the project according to current best practices: separating the html from the code (as we showed you in the preceding examples) and also providing dynamic links to help ensure that the argon.js and other resources stay up to date. 
  
-Case 2: to debug existing completed Argon3 applications without rewriting or refactoring the code or other assets.  
+2. to debug existing completed Argon3 applications without rewriting or refactoring the code or other assets.  
  
 ##Getting started 
  
@@ -32,25 +32,25 @@ To use the Argon generator, do the following. Note that all the commands below a
   
 Depending on the speed of your connection and machine, these installations may take many minutes to complete. Once these steps are complete (without error messages), you can use yeoman to bootstrap a new Argon project, as shown below.   
  
-Case 1: Using the generator to create a new project  
+##Case 1: Using the generator to create a new project  
  
 The next step is to create a new, empty directory where ever you'd like your new project to be (but not in the generator-argon directory that you created above), cd into it, and use 'yo argon' to fill it with a new sample project. These are the commands that will create the directory my_argon_project and populate it: 
  
-mkdir my_argon_project 
-cd my_argon_project 
-yo argon 
+    mkdir my_argon_project 
+    cd my_argon_project 
+    yo argon 
  
 The project is set up with an index.html file at the top level, that uses SystemJS to load the application's Javascript from src/app.js. The preceding tutorials (2-6) have already shown you how to separate the html file from the app.js file. This project template follows that same practice. You write your html into the index.html file. All the javascript code goes in the src/app.js file (or multiple files in the src folder if you prefer).  
  
 When you are ready to test the code that you have written, use your Terminal to cd back to the top level of your project (the my_argon_project directory or whatever the name is). Then issue this command: 
  
-  gulp dev 
+    gulp dev 
   
 This will set up the server to run on your computer. In order to debug, your computer and your phone must be on the same local area network. Find the ip address of your computer. (On a Mac you can find this address by looking at the Network utility under System Preferences.)   
  
---To simply see your application running, open Argon on your phone and enter `<your-ip-address>:1337`.  (The server will be serving  your application on port 1337.) 
+* To simply see your application running, open Argon on your phone and enter `<your-ip-address>:1337`.  (The server will be serving  your application on port 1337.) 
  
---To debug your application, there are two steps:  
+* To debug your application, there are two steps:  
  
 ON YOUR COMPUTER: Type the path name of your index.html file into your Safari or Chrome browser. In this case you would type: <your-ip-address>:1337/my_argon_project/index.html 
 ON YOUR PHONE:  type <your-ip-address>:1337/debug 
@@ -61,19 +61,19 @@ This two urls should succeed in connecting your phone to the computer. The compu
  
 To debug an existing application without refactoring the code,  you create a new directory and use yeoman as in Case 1.  That is, open your Terminal program, cd to where ever you want to setup your test directory and do the following: 
  
-mkdir my_argon_project  [you can use any directory name you like] 
-cd my_argon_project 
-yo argon 
+    mkdir my_argon_project  [you can use any directory name you like] 
+    cd my_argon_project 
+    yo argon 
  
 This last step creates all the scaffolding files and folders just as in Case 1. After yo has finished, stay in the same directory and create another subdirectory, which must be called "www": 
  
-mkdir www 
+    mkdir www 
  
 Then take the file and folder hierarchy of your application and copy them into this www directory.  You can test and debug your application in exactly the same way that we describe in Case 1. To repeat: 
  
 Issue this command: 
  
-gulp dev 
+    gulp dev 
   
 This will set up the server to run on your computer. In order to debug, your computer and your phone must be on the same local area network. Find the ip address of your computer. (On a Mac you can find this address by looking at the Network dialogue box under System Preferences.)   
  
