@@ -1,67 +1,32 @@
-<!doctype html>
-<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
-<title>Directions</title>
-
-<script src="../lib/three.js"></script>
-<script src="../lib/threestrap.js"></script>
-<script src="../lib/argon.js"></script>
-<script src="../lib/argon-three.js"></script>
-
-<body></body>
-
-<script>
-  var options = THREE.Bootstrap.createArgonOptions( ARGON.immersiveContext )
-  options.renderer = { klass: THREE.CSS3DRenderer }
-  var three = THREE.Bootstrap( options )
-
-  three.argon.bindComponent(new ARGON.Component.CameraTarget, three.camera)
-
-  var cameraLocationTarget = new ARGON.Component.CameraTarget
-  cameraLocationTarget.setFilter(ARGON.filters.onlyPosition)
-
-  var cameraLocation = new THREE.Object3D
-  three.argon.bindComponent(cameraLocationTarget, cameraLocation)
-  three.scene.add(cameraLocation)
-
-  // creating 2 in opposite x y z positions
-  var divZpos = document.createElement('div')
-  var divZneg = document.createElement('div')
-
-  // Put content in each one div
-  divZpos.id = "cssContent"
-  divZpos.style.width = "100px"
-  divZpos.style.height = "100px"
-  divZpos.style.backgroundColor = "green"
-  divZpos.style.position = 'absolute'
-  divZpos.style.fontSize = "16px"
-  divZpos.innerText = "Pos Z = North"
-
-  divZneg.id = "cssContent"
-  divZneg.style.width = "100px"
-  divZneg.style.height = "100px"
-  divZneg.style.backgroundColor = "green"
-  divZneg.style.position = 'absolute'
-  divZneg.style.fontSize = "16px"
-  divZneg.innerText = "Neg Z = South"
-
-  // create 2 CSS Objects in the scene graph
-  var cssObjectZpos = new THREE.CSS3DObject(divZpos)
-  var cssObjectZneg = new THREE.CSS3DObject(divZneg)
-
-  // Set the objects' positions
-  cssObjectZpos.position.x = 0.0
-  cssObjectZpos.position.y = 0.0
-  cssObjectZpos.position.z = 200.0
-  cssObjectZpos.rotation.y = Math.PI
-
-  cssObjectZneg.position.x = 0.0
-  cssObjectZneg.position.y = 0.0
-  cssObjectZneg.position.z = -200.0
-  //no rotation need for this one
-
-  // Add the objects to the scene
-  cameraLocation.add(cssObjectZpos)
-  cameraLocation.add(cssObjectZneg)
-
-</script>
+<<!doctype html>  
+</html> 
+<meta charset="utf-8">  
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"  
+ 
+<!--three.js, a 3D Scene graph for the web-->  
+<script src=“../../vendor/three.js"></script>  
+ 
+<!--threestrap.js is a bootstrapping library that makes three.js easier to work with. Argon-three.js requires it-->  
+<script src=“../../vendor/threestrap.js"></script>  
+ 
+<!--The argon library support for integration of three.js and argon.j-->  
+<script src=“argon.js"></script>  
+<script src=“argon-three.js"></script>  
+ 
+<!-- One or more style sheets for styling the elements in the body --> 
+<link rel="stylesheet" type="text/css" href="style.css">  
+ 
+<body>  
+    <div id="argon-immersive-context">  
+         <!--any html for interface elements etc. that will appear on the screen in AR mode-->  
+    </div>  
+<div> 
+<!--one or more divs that you want to appear in "Page Mode"--> 
+</div> 
+</body>  
+ 
+<!--The javascript for your app goes in separate file--> 
+<script src=“app.js"></script>  
+ 
+</html> 
