@@ -34,15 +34,15 @@ Depending on the speed of your connection and machine, these installations may t
  
 ##Case 1: Using the generator to create a new project  
  
-The next step is to create a new, empty directory where ever you'd like your new project to be (but not in the generator-argon directory that you created above), cd into it, and use 'yo argon' to fill it with a new sample project. These are the commands that will create the directory my_argon_project and populate it: 
+The next step is to create a new, empty directory where ever you'd like your new project to be (but not in the generator-argon directory that you created above), cd into it, and use 'yo argon' to fill it with a new sample project. These are the commands that will create the directory my-argon-project and populate it: 
  
-    mkdir my_argon_project 
-    cd my_argon_project 
+    mkdir my-argon-project 
+    cd my-argon-project 
     yo argon 
  
 The project is set up with an index.html file at the top level, that uses SystemJS to load the application's Javascript from src/app.js. The preceding tutorials (2-6) have already shown you how to separate the html file from the app.js file. This project template follows that same practice. You write your html into the index.html file. All the javascript code goes in the src/app.js file (or multiple files in the src folder if you prefer).  
  
-When you are ready to test the code that you have written, use your Terminal to cd back to the top level of your project (the my_argon_project directory or whatever the name is). Then issue this command: 
+When you are ready to test the code that you have written, use your Terminal to cd back to the top level of your project (the my-argon-project directory or whatever the name is). Then issue this command: 
  
     gulp dev 
   
@@ -52,7 +52,7 @@ This will set up the server to run on your computer. In order to debug, your com
  
 * To debug your application, there are two steps:  
  
-1, ON YOUR COMPUTER: Type the path name of your index.html file into your Safari or Chrome browser. In this case you would type: <your-ip-address>:1337/my_argon_project/index.html 
+1, ON YOUR COMPUTER: Type the path name of your index.html file into your Safari or Chrome browser. In this case you would type: <your-ip-address>:1337/my-argon-project/index.html 
     
 2. ON YOUR PHONE:  type <your-ip-address>:1337/debug 
  
@@ -62,8 +62,8 @@ This two urls should succeed in connecting your phone to the computer. The compu
  
 To debug an existing application without refactoring the code,  you create a new directory and use yeoman as in Case 1.  That is, open your Terminal program, cd to where ever you want to setup your test directory and do the following: 
  
-    mkdir my_argon_project  [you can use any directory name you like] 
-    cd my_argon_project 
+    mkdir my-argon-project  [you can use any directory name you like] 
+    cd my-argon-project 
     yo argon 
  
 This last step creates all the scaffolding files and folders just as in Case 1. After yo has finished, stay in the same directory and create another subdirectory, which must be called "www": 
@@ -78,11 +78,11 @@ Issue this command:
   
 This will set up the server to run on your computer. In order to debug, your computer and your phone must be on the same local area network. Find the ip address of your computer. (On a Mac you can find this address by looking at the Network dialogue box under System Preferences.)   
  
-To simply see your application running, open Argon on your phone and enter `<your-ip-address>:1337/my_argon_project/www/index.html`. 
+To simply see your application running, open Argon on your phone and enter `<your-ip-address>:1337/my-argon-project/www/index.html`. 
  
 To debug your application, there are two steps:  
  
-1. ON YOUR COMPUTER: Type the path name of your index.html file into your Safari or Chrome browser. In this case you would type: <your-ip-address>:1337/my_argon_project/www/index.html (or whatever the pathname is) 
+1. ON YOUR COMPUTER: Type the path name of your index.html file into your Safari or Chrome browser. In this case you would type: <your-ip-address>:1337/my-argon-project/www/index.html (or whatever the pathname is) 
     
 2. ON YOUR PHONE:  type <your-ip-address>:1337/debug 
  
