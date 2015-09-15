@@ -14,7 +14,7 @@ This example illustrates both ways of locating content: 1. It finds the current
 
 ## Main file (index.html)
 
-In the index.html, the body tag is in two parts.  The "argon-immersive-context" div is used to create a small dynamic information box at the bottom of the screen that will track the user's location and the position of the two objects.  Text outside this special div is rendered only when the user enters "Page Mode" by touched the icon in the top right corner of the interface. In this case,  the text in Page Mode offers an explanation of the example that appears on the screen over the background context. 
+In the index.html, the body tag is in two parts.  The "argon-immersive-context" div is used to create a small dynamic information box at the bottom of the screen that will track the user's location and the position of the two objects.  Text outside this special div is rendered only when the user enters "Page Mode" by touching the icon in the top right corner of the interface. In this case,  the text in Page Mode offers an explanation of the example that appears on the screen over the background context. 
 
 {% highlight html %}
 <body>
@@ -119,7 +119,7 @@ Finally we create two event handlers. One is for assigning and changing the Real
   }
 {% endhighlight %}
 
- The  state.previousReality will be undefined the first time. The following code checks for the reality change.  Unless the user moves 5 km from her initial position. This event will only fire once, when the application is launched.  It is here that we set the position of the wooden box to be near the camera. We only need to reposition the box when the Reality changes. Otherwise it will just move to remain near the camera. 
+ The  state.previousReality will be undefined the first time. The following code checks for the reality change.  Unless the user moves 5 km from her initial position, this event will only fire once, when the application is launched.  It is here that we set the position of the wooden box to be near the camera. We only need to reposition the box when the Reality changes. Otherwise it will just move to remain near the camera. 
 
 {% highlight js %}
    var realityInit = false
@@ -198,7 +198,7 @@ The state parameter has the following entries:
     box.rotation.y += 3 * three.Time.delta
    {% endhighlight %}
 
-No  we compute the distance from the camera to each of the two cubes to the cube. If the cube could be "far" away, we'd want to use Cesium.EllipsoidGeodesic, rather than Euclidean distance, but this is fine here.
+Now, we compute the distance from the camera to each of the two cubes to the cube. If the cube could be "far" away, we'd want to use Cesium.EllipsoidGeodesic, rather than Euclidean distance, but this is fine here.
 
    {% highlight js %}
     var point1 = three.camera.getWorldPosition();
@@ -224,4 +224,4 @@ Note that we do not read or assign text to the DOM element itself until the very
       lastInfoText = infoText;   
    {% endhighlight %}
    
-This tutorial (2) shoued how to position geoObjects using GPS. In the next tutorial (3), we will see how to position objects using Vuforia's image tracking system:  ([Vuforia](vuforia.html)). 
+This tutorial (2) showed how to position geoObjects using GPS. In the next tutorial (3), we will see how to position objects using Vuforia's image tracking system:  ([Vuforia](vuforia.html)). 
