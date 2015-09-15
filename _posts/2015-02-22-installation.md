@@ -56,7 +56,7 @@ Third, because Webkit is a full-featured HTML5 engine (used by Safari), Argon ca
 
 ## The application code (app.js)
 
-In these tutorials, we place the application javascript in a separate file (you can create your web applications as you see fit, placing all content wherever you prefer, as with any web application). Segregating the javascript code into a file separate from  index.html file allows for a cleaner workflow as well as the use a wide variety of Javascript development tools to transcode, minify or otherwise manipulate your code. We name the file app.js in each of the tutorials.
+In these tutorials, we place the application javascript in a separate file (you can create your web applications as you see fit, placing all content wherever you prefer, as with any web application). Segregating the javascript code into a file separate from  index.html file allows for a cleaner workflow as well as the use of a wide variety of Javascript development tools to transcode, minify or otherwise manipulate your code. We name the file app.js in each of the tutorials.
 
 Inside app.js, in order to initialize Argon, scripts typically begin with: 
 {% highlight js linenos=table %}
