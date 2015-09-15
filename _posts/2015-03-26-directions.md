@@ -91,7 +91,7 @@ Here we create the 3D object from the div element, push it on a stack for use la
    root.add(object);
 {% endhighlight %}
 
-The root object now has all six of the sign; so we attach it to the eyeOrigin. 
+The root object now has all six of the signs; so we attach it to the eyeOrigin. 
 
 {% highlight js %}
 eyeOrigin.add(root);
