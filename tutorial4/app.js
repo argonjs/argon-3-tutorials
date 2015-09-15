@@ -1,113 +1,74 @@
+
+//This example is a simplified version of the three.js periodic table example adapted to Argon.
+// For the full version, see http://threejs.org/examples/#css3d_periodictable
+//
+
 var options = THREE.Bootstrap.createArgonOptions( Argon.immersiveContext )
 options.renderer = { klass: THREE.CSS3DRenderer }
 var three = THREE.Bootstrap( options )
 
 var eyeOrigin = three.argon.objectFromEntity(Argon.immersiveContext.eyeOrigin)
 
-// creating 6 divs to indicate the x y z positioning
-var divXpos = document.createElement('div')
-var divXneg = document.createElement('div')
-var divYpos = document.createElement('div')
-var divYneg = document.createElement('div')
-var divZpos = document.createElement('div')
-var divZneg = document.createElement('div')
+// This table gives information to be displayed and also the position and rotation vectors
+var table = [
+    [ "N", "North", "(Negative Z)", 0, 0, -600, 0, 0, 0],
+    [ "S", "South", "(Positive Z)", 0, 0, 600, 0, Math.PI, 0  ],
+    [ "E", "East", "(Positive X)", 600, 0, 0, 0, -Math.PI/2, 0 ],
+    [ "W", "West", "(Negative X)", -600, 0, 0, 0, Math.PI/2, 0 ],
+    [ "U", "Up", "(Positive Y)", 0, 600, 0, Math.PI/2, 0, 0 ],
+    [ "D", "Down", "(Negative Y)", 0, -600, 0, Math.PI/2,  Math.PI, Math.PI]
+  ];
 
-// Put content in each one  (should do this as a couple of functions)
-// for X
-divXpos.id = "cssContent"
-divXpos.style.width = "100px"
-divXpos.style.height = "100px"
-divXpos.style.backgroundColor = "red"
-divXpos.style.position = 'absolute'
-divXpos.style.fontSize = "16px"
-divXpos.innerText = "Pos X = East"
+  var objects = []
 
-divXneg.id = "cssContent"
-divXneg.style.width = "100px"
-divXneg.style.height = "100px"
-divXneg.style.backgroundColor = "red"
-divXneg.style.position = 'absolute'
-divXneg.style.fontSize = "16px"
-divXneg.innerText = "Neg X = West"
+  var root = new THREE.Object3D()
 
-// for Y
-divYpos.id = "cssContent"
-divYpos.style.width = "100px"
-divYpos.style.height = "100px"
-divYpos.style.backgroundColor = "blue"
-divYpos.style.position = 'absolute'
-divYpos.style.fontSize = "16px"
-divYpos.innerText = "Pos Y = Up"
+  for ( var i = 0; i < table.length; i ++ ) {
 
-divYneg.id = "cssContent"
-divYneg.style.width = "100px"
-divYneg.style.height = "100px"
-divYneg.style.backgroundColor = "blue"
-divYneg.style.position = 'absolute'
-divYneg.style.fontSize = "16px"
-divYneg.innerText = "Neg Y = Down"
+    var item = table[ i ];
 
-//for Z
-divZpos.id = "cssContent"
-divZpos.style.width = "100px"
-divZpos.style.height = "100px"
-divZpos.style.backgroundColor = "green"
-divZpos.style.position = 'absolute'
-divZpos.style.fontSize = "16px"
-divZpos.innerText = "Pos Z = South"
+    var element = document.createElement( 'div' );
+    element.className = 'element';
+    element.style.backgroundColor = 'rgba(200,120,200,1)';
 
-divZneg.id = "cssContent"
-divZneg.style.width = "100px"
-divZneg.style.height = "100px"
-divZneg.style.backgroundColor = "green"
-divZneg.style.position = 'absolute'
-divZneg.style.fontSize = "16px"
-divZneg.innerText = "Neg Z = North"
+    var symbol = document.createElement( 'div' );
+    symbol.className = 'symbol';
+    symbol.textContent = item[ 0 ];
+    element.appendChild( symbol );
 
-// create 6 CSS3DObjects in the scene graph
-var cssObjectXpos = new THREE.CSS3DObject(divXpos)
-var cssObjectXneg = new THREE.CSS3DObject(divXneg)
-var cssObjectYpos = new THREE.CSS3DObject(divYpos)
-var cssObjectYneg = new THREE.CSS3DObject(divYneg)
-var cssObjectZpos = new THREE.CSS3DObject(divZpos)
-var cssObjectZneg = new THREE.CSS3DObject(divZneg)
+    var details = document.createElement( 'div' );
+    details.className = 'details';
+    details.innerHTML = item[ 1 ] + '<br>' + item[ 2 ];
+    element.appendChild( details );
 
-// the width and height is used to align things.
-cssObjectXpos.position.x = 200.0
-cssObjectXpos.position.y = 0.0
-cssObjectXpos.position.z = 0.0
-cssObjectXpos.rotation.y = - Math.PI / 2
+    var object = new THREE.CSS3DObject( element );
+		object.matrixAutoUpdate = false;
+    objects.push( object );
 
-cssObjectXneg.position.x = -200.0
-cssObjectXneg.position.y = 0.0
-cssObjectXneg.position.z = 0.0
-cssObjectXneg.rotation.y =  Math.PI / 2
+    // Add each object our root node
+    root.add(object);
+  }
 
-// for Y
-cssObjectYpos.position.x = 0.0
-cssObjectYpos.position.y = 200.0
-cssObjectYpos.position.z = 0.0
-cssObjectYpos.rotation.x = Math.PI / 2
+	// Add the root node to our eyeOrigin
+	eyeOrigin.add(root)
 
-cssObjectYneg.position.x = 0.0
-cssObjectYneg.position.y = - 200.0
-cssObjectYneg.position.z = 0.0
-cssObjectYneg.rotation.x = - Math.PI / 2
+	// Now we just have to position the six elements at the compass points
+	
+  for ( var i = 0; i < objects.length; i ++ ) {
 
-// for Z
-cssObjectZpos.position.x = 0.0
-cssObjectZpos.position.y = 0.0
-cssObjectZpos.position.z = 200.0
-cssObjectZpos.rotation.y = Math.PI
-
-cssObjectZneg.position.x = 0.0
-cssObjectZneg.position.y = 0.0
-cssObjectZneg.position.z = -200.0
-//no rotation need for this one
-
-eyeOrigin.add(cssObjectXpos)
-eyeOrigin.add(cssObjectXneg)
-eyeOrigin.add(cssObjectYpos)
-eyeOrigin.add(cssObjectYneg)
-eyeOrigin.add(cssObjectZpos)
-eyeOrigin.add(cssObjectZneg)
+    var item = table[ i ];
+    var target = new THREE.Object3D();
+    // three position values
+    target.position.x = item[ 3 ];
+    target.position.y = item[ 4 ];
+    target.position.z = item[ 5 ];
+    //the three axes of rotation
+ 	  target.rotation.x = item[ 6 ];     
+	  target.rotation.y = item[ 7 ];  
+	  target.rotation.z = item[ 8 ];  
+    
+	object = objects[ i ];
+    object.position.copy(target.position)
+    object.rotation.copy(target.rotation)
+	object.updateMatrix()	
+  }
