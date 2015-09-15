@@ -24,7 +24,7 @@ In the index.html, the body tag is in two parts.  The "argon-immersive-context"
     </div>  
   </div>
   <h1>A Simple Geolocation example</h1>
-  <p>This example takes the current location of the viewer, and positions a cube at a well known nearby location (the Georgia Tech campus, for us), and creates a second cube a small distance away from where the viewer was positioned when the example was loaded.  We do this by adding a small amount to our current east-west location, in the local Three.js cartesian coordinates.  This illustrates how to create geospatial content based on the current location, and update the internal geospatial location of the object.</p>
+  <p>This example takes the current location of the viewer, and positions a cube at a well-known nearby location (the Georgia Tech campus, for us), and creates a second cube a small distance away from where the viewer was positioned when the example was loaded.  We do this by adding a small amount to our current east-west location, in the local Three.js cartesian coordinates.  This illustrates how to create geospatial content based on the current location, and update the internal geospatial location of the object.</p>
 </body>
 {% endhighlight %}
 
@@ -110,7 +110,7 @@ The boxGeoObject is the object that we will move around (and box will move with 
 
 ## The argon:realityChange event
 
-Finally we create two event handlers. One is for assigning and changing the Reality (the background view) that the application will use.  An *argon.js* context consists of AR content and a Reality (See the Background for a futher explanation.)   Each time the Context is assigned a new Reality, including the first time, we receive a "realityChange" event.  The application should do initialization that is based on the state of the world here. *argon.js* has a state parameter with the following entries:
+Finally we create two event handlers. One is for assigning and changing the Reality (the background view) that the application will use.  An *argon.js* context consists of AR content and a Reality (See the Background for a further explanation.)   Each time the Context is assigned a new Reality, including the first time, we receive a "realityChange" event.  The application should do initialization that is based on the state of the world here. *argon.js* has a state parameter with the following entries:
 
 {% highlight js %}
 {
