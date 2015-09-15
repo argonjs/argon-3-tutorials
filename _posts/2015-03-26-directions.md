@@ -54,7 +54,7 @@ var table = [
   ];
 {% endhighlight %}
 
-We create a root object in *three/js*, to which we attach all the others. 
+We create a root object in *three.js*, to which we attach all the others. 
 
 {% highlight js %}
   var objects = [] 
