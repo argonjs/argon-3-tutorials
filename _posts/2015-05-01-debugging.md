@@ -6,9 +6,9 @@ short_description: "This tutorial shows how to use the jspm-generator to create 
 source_directory: tutorial7
 ---
 
-The code and html that goes into an Argon3 applications can be debugged in various ways. Any html that is going to appear on the screen or in the "Page Mode" can be tested and refined in the browser on the a laptop or desktop machine. Much of the javascript can be tested in the some way. However, an "end-to-end" test of Argon3 application for the iPhone or iPad presents a challenge to debug. We include a system to facilitate real-time debugging of the app running on the phone.  
+The code and html that goes into an Argon3 application can be debugged in various ways. Any html that is going to appear on the screen or in the "Page Mode" can be tested and refined in the browser on a laptop or desktop machine. Much of the javascript can be tested in the same way. However, an "end-to-end" test of Argon3 application for the iPhone or iPad presents a challenge to debug. We include a system to facilitate real-time debugging of the app running on the phone.  
  
-The idea is to connect the phone or tablet to a computer running the Safari or Chrome browser. (You should be able to use Chrome on Windows or Linux; Chrome or Safari on Mac OS X.) The html and javascript code runs in the browser while taking position and orientation input from the phone or tablet. The developer can therefore use the debugging tools available on the browser to track variables,  report errors, etc. This combination of browser and phone makes it possible to test and debug much of the look and feel of the application.  
+The idea is to connect the phone or tablet to a computer running the Safari or Chrome browser. (You should be able to use Chrome on Windows or Linux; Chrome or Safari on Mac OS X.) The html and javascript code runs in the browser while taking position and orientation input from the phone or tablet. The developer can therefore use the debugging tools available on the browser to track variables, report errors, etc. This combination of browser and phone makes it possible to test and debug much of the look and feel of the application.  
  
 The Argon3 debugger uses node.js (the open source, runtime environment for server-side applications) to serve the application to the laptop browser and direct input from phone or tablet. In addition, setting up the debugger requires jspm, gulp and yeoman.  jspm is a javascript package manager for the SystemJS universal module loader (jspm.io).  We use this to download the necessary Javascript libraries, including the latest version of argon.js and others. Gulp is a streaming build system for node.js. And Yeoman (yeoman.io) helps you kickstart new projects using installed templates.  
  
@@ -22,7 +22,7 @@ The system described here can be used in two ways:
  
 ##Getting started 
  
-To use the Argon generator, do the following. Note that all the commands below are entered in to the Terminal utility on your Mac OS X or similar utlity on Window or Linix.  
+To use the Argon generator, do the following. Note that all the commands below are entered into the Terminal utility on your Mac OS X or similar utility on Window or Linux.  
  
 1. Install [node.js/npm](http://nodejs.org). Go to http://node.js.org and install node.js/npm on your computer. The npm stands for node package manager, which you will use in the following steps 
  
@@ -56,11 +56,11 @@ To debug your application, there are two steps:
     
 2. ON YOUR PHONE:  type <your-ip-address>:1337/debug 
  
-This two urls should succeed in connecting your phone to the computer. The computer browser will display all the 3D and html content of your application. It will not, however, be able to display the background video from the phone's camera. Instead you will see the 3D objects and html against a white background. The phone will provide the orientation and position input. As you move the phone around, the content of your application will respond just as they would in the normal operation of your application on the phone. Also, you can use any of the debugging features of Safari or Chrome to examine the code and check for errors.  
+These two urls should succeed in connecting your phone to the computer. The computer browser will display all the 3D and html content of your application. It will not, however, be able to display the background video from the phone's camera. Instead you will see the 3D objects and html against a white background. The phone will provide the orientation and position input. As you move the phone around, the content of your application will respond just as they would in the normal operation of your application on the phone. Also, you can use any of the debugging features of Safari or Chrome to examine the code and check for errors.  
  
 ##Case 2: Using the generator to debug an existing project application 
  
-To debug an existing application without refactoring the code,  you create a new directory and use yeoman as in Case 1.  That is, open your Terminal program, cd to where ever you want to setup your test directory and do the following: 
+To debug an existing application without refactoring the code,  you create a new directory and use yeoman as in Case 1.  That is, open your Terminal program, cd to wherever you want to setup your test directory and do the following: 
  
     mkdir my-argon-project  [you can use any directory name you like] 
     cd my-argon-project 

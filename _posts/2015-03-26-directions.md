@@ -16,7 +16,7 @@ In the index.html file, we explain what the example does in the body tag: this w
 
   <body style="background-color:rgba(255,255,255,0.7)"> 
     <h2>Six directions example</h2> 
-    <p>This example displays the reference frame around the camera in Cartesian coordinates (x, y, x). It puts a image in the negative and positive directions: x is left/right; y is up/down; z is back front. A div is created in each of these directions and converted to cssObject (in three.js) at  600 units from the origin. These cssObjects are then added to the eyeOrigin. The eyeOrigin is the position of the camera: the cssObjects will always appear in the same locations relative to the camera. </p>   
+    <p>This example displays the reference frame around the camera in Cartesian coordinates (x, y, x). It puts a image in the negative and positive directions: x is left/right; y is up/down; z is back/front. A div is created in each of these directions and converted to cssObject (in three.js) at  600 units from the origin. These cssObjects are then added to the eyeOrigin. The eyeOrigin is the position of the camera: the cssObjects will always appear in the same locations relative to the camera. </p>   
   </body>
   
 {% endhighlight %}
@@ -54,7 +54,7 @@ var table = [
   ];
 {% endhighlight %}
 
-We create a root object in *three/js*, to which we attach all the others. 
+We create a root object in *three.js*, to which we attach all the others. 
 
 {% highlight js %}
   var objects = [] 
@@ -91,7 +91,7 @@ Here we create the 3D object from the div element, push it on a stack for use la
    root.add(object);
 {% endhighlight %}
 
-The root object now has all six of the sign; so we attach it to the eyeOrigin. 
+The root object now has all six of the signs; so we attach it to the eyeOrigin. 
 
 {% highlight js %}
 eyeOrigin.add(root);

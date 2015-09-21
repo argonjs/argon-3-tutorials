@@ -6,7 +6,7 @@ short_description: "This tutorial shows you how to get your Argon environment re
 source_directory: tutorial1
 ---
 
-An *argon.js* web application is created like any other web application; a server responds to http protocol requests and delivers an HTML5 web application to the browser.  In these examples, we will use static HTML and Javascript files, but any dynamic web application serve could be used. The files will include *argon.js* (as well other javascript libraries such as *three.js*, a 3D framework). The main or launch file (e.g. index.html) has the following structure: 
+An *argon.js* web application is created like any other web application; a server responds to http protocol requests and delivers an HTML5 web application to the browser.  In these examples, we will use static HTML and Javascript files, but any dynamic web application server could be used. The files will include *argon.js* (as well other javascript libraries such as *three.js*, a 3D framework). The main or launch file (e.g. index.html) has the following structure: 
 
 {% highlight html %}
 <!doctype html>
@@ -20,7 +20,7 @@ An *argon.js* web application is created like any other web application; a serve
 <!--threestrap.js is a bootstrapping library that makes three.js easier to work with.  Argon-three.js requires it-->
 <script src=“../../js/threestrap.js"></script>
 
-<!--The argon library support for integration of three.js and argon.j-->
+<!--The argon library support for integration of three.js and argon.js-->
 <script src=“../../build/argon.js"></script>
 <script src=“../../build/argon-three.js"></script>
 
@@ -56,7 +56,7 @@ Third, because Webkit is a full-featured HTML5 engine (used by Safari), Argon ca
 
 ## The application code (app.js)
 
-In these tutorials, we place the application javascript in a separate file (you can create your web applications as you see fit, placing all content wherever you prefer, as with any web application). Segregating the javascript code into a file separate from  index.html file allows for a cleaner workflow as well as the use a wide variety of Javascript development tools to transcode, minify or otherwise manipulate your code. We name the file app.js in each of the tutorials.
+In these tutorials, we place the application javascript in a separate file (you can create your web applications as you see fit, placing all content wherever you prefer, as with any web application). Segregating the javascript code into a file separate from  index.html file allows for a cleaner workflow as well as the use of a wide variety of Javascript development tools to transcode, minify or otherwise manipulate your code. We name the file app.js in each of the tutorials.
 
 Inside app.js, in order to initialize Argon, scripts typically begin with: 
 {% highlight js linenos=table %}
