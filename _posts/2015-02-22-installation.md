@@ -15,14 +15,14 @@ An *argon.js* web application is created like any other web application; a serve
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
 <!--three.js, a 3D Scene graph for the web-->
-<script src=“../../js/three.js"></script>
+<script src="../../js/three.js"></script>
 
 <!--threestrap.js is a bootstrapping library that makes three.js easier to work with.  Argon-three.js requires it-->
-<script src=“../../js/threestrap.js"></script>
+<script src="../../js/threestrap.js"></script>
 
 <!--The argon library support for integration of three.js and argon.js-->
-<script src=“../../build/argon.js"></script>
-<script src=“../../build/argon-three.js"></script>
+<script src="../../build/argon.js"></script>
+<script src="../../build/argon-three.js"></script>
 
 <!-- One or more style sheets for styling the elements in the body -->
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -37,7 +37,7 @@ An *argon.js* web application is created like any other web application; a serve
 </body>
 
 <!--application javascript code-->
-<script src=“../app.js"></script>
+<script src="../app.js"></script>
 
 </html>
 {% endhighlight %}
