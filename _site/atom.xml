@@ -4,7 +4,7 @@
  <title>Argonjs</title>
  <link href="http://argonjs-tutorial.io/atom.xml" rel="self"/>
  <link href="http://argonjs-tutorial.io/"/>
- <updated>2016-03-08T14:38:33-05:00</updated>
+ <updated>2016-03-08T14:54:35-05:00</updated>
  <id>http://argonjs-tutorial.io</id>
  <author>
    <name></name>
@@ -20,13 +20,13 @@
    <content type="html">&lt;p&gt;This site contains a collection of tutorials for web developers using argon.js to add AR content to a web application. On this page, we provide an overview of the design of argon.js, introducing the terminology and concepts used by the framework. In the tutorials, we will go through a sequence of examples that show how to leverage the various features of argon.js in a web application.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;tutorials/Tutorial1&quot;&gt;Tutorial 1 - Getting Started&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;tutorials/Tutorial2&quot;&gt;Tutorial 2 - Compass&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;tutorials/Tutorial3&quot;&gt;Tutorial 3 - Periodic table&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;tutorials/utorial4&quot;&gt;Tutorial 4 - Panorama Reality&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;tutorials/Tutorial5&quot;&gt;Tutorial 5 - Geolocation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/argon-tutorials/tutorials/Tutorial1&quot;&gt;Tutorial 1 - Getting Started&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/argon-tutorials/tutorials/Tutorial2&quot;&gt;Tutorial 2 - Compass&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/argon-tutorials/tutorials/Tutorial3&quot;&gt;Tutorial 3 - Periodic table&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/argon-tutorials/tutorials/utorial4&quot;&gt;Tutorial 4 - Panorama Reality&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/argon-tutorials/tutorials/Tutorial5&quot;&gt;Tutorial 5 - Geolocation&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;tutorials/Tutorial6&quot;&gt;Tutorial 6 - Using Argon.js with Vuforia&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;/argon-tutorials/tutorials/Tutorial6&quot;&gt;Tutorial 6 - Using Argon.js with Vuforia&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;For more information about Argon3, please visit &lt;a href=&quot;tutorials/Overview&quot;&gt;overview&lt;/a&gt;.&lt;/p&gt;
