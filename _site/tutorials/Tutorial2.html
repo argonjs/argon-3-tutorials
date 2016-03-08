@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Tutorial 2 - Compass &middot; Argonjs
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>This site contains a collection of tutorials for web developers using <a href="http://argonjs.io" target="_blank">argon.js</a> to add AR content to a web application.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <li class="sidebar-nav-item"><a href="/tutorials/WelcomePage">Home</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Overview">Overview</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial1">Tutorial 1</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial2">Tutorial 2</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial3">Tutorial 3</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial4">Tutorial 4</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial5">Tutorial 5</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial6">Tutorial 6</a></li>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about">About</a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+
+    <a class="sidebar-nav-item" href="/argon-tutorials.zip">Download</a>
+    <a class="sidebar-nav-item" href="https://github.com/argonjs/argon.js">GitHub project</a>
+    <span class="sidebar-nav-item">Currently v1.0.0</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2016. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Argonjs</a>
+            <small>Tutorials</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Tutorial 2 - Compass</h1>
+  <span class="post-date">01 Mar 2016</span>
+  <h3 id="before-you-start">Before you start</h3>
+<p>Make sure you have completed <a href="/argon-tutorials/tutorial1">tutorial 1</a></p>
+
+<h3 id="what-you-should-see">What you should see</h3>
+<p>Download <a href="https://itunes.apple.com/us/app/argon3/id944297993?ls=1&amp;mt=8">Argon3</a> and <a href="/argon-tutorials/tutorial4">Try Now</a></p>
+
+<p>As you move your camera around, you should see direction markers (north, east, south, west, up and down) positioned in space.</p>
+<div class="video">
+    <figure>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/utUDuncItCs" frameborder="0" allowfullscreen=""></iframe>
+    </figure>
+</div>
+
+<h3 id="introduction">Introduction</h3>
+<p>This example demonstrates how to position content in space relative to the camera, which the user can view around her when she loads the application into Argon3.</p>
+
+<h3 id="main-file-indexhtml">Main file (index.html)</h3>
+<p>In the index.html file, we explain what the example does in the body tag: this will appear when the user enters Page Mode.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">body</span> <span class="nx">style</span><span class="o">=</span><span class="s2">"background-color:rgba(255,255,255,0.7)"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">Six</span> <span class="nx">directions</span> <span class="nx">example</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">This</span> <span class="nx">example</span> <span class="nx">displays</span> <span class="nx">the</span> <span class="nx">reference</span> <span class="nx">frame</span> <span class="nx">around</span> <span class="nx">the</span> <span class="nx">camera</span> <span class="k">in</span> <span class="nx">Cartesian</span> <span class="nx">coordinates</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">x</span><span class="p">).</span> <span class="nx">It</span> <span class="nx">puts</span> <span class="nx">a</span> <span class="nx">image</span> <span class="k">in</span> <span class="nx">the</span> <span class="nx">negative</span> <span class="nx">and</span> <span class="nx">positive</span> <span class="nx">directions</span><span class="err">:</span> <span class="nx">x</span> <span class="nx">is</span> <span class="nx">left</span><span class="o">/</span><span class="nx">right</span><span class="p">;</span> <span class="nx">y</span> <span class="nx">is</span> <span class="nx">up</span><span class="o">/</span><span class="nx">down</span><span class="p">;</span> <span class="nx">z</span> <span class="nx">is</span> <span class="nx">back</span><span class="o">/</span><span class="nx">front</span><span class="p">.</span> <span class="nx">A</span> <span class="nx">div</span> <span class="nx">is</span> <span class="nx">created</span> <span class="k">in</span> <span class="nx">each</span> <span class="nx">of</span> <span class="nx">these</span> <span class="nx">directions</span> <span class="nx">and</span> <span class="nx">converted</span> <span class="nx">to</span> <span class="nx">cssObject</span> <span class="p">(</span><span class="k">in</span> <span class="nx">three</span><span class="p">.</span><span class="nx">js</span><span class="p">)</span> <span class="nx">at</span>  <span class="mi">600</span> <span class="nx">units</span> <span class="nx">from</span> <span class="nx">the</span> <span class="nx">origin</span><span class="p">.</span> <span class="nx">These</span> <span class="nx">cssObjects</span> <span class="nx">are</span> <span class="nx">then</span> <span class="nx">added</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">eyeOrigin</span><span class="p">.</span> <span class="nx">The</span> <span class="nx">eyeOrigin</span> <span class="nx">is</span> <span class="nx">the</span> <span class="nx">position</span> <span class="nx">of</span> <span class="nx">the</span> <span class="nx">camera</span><span class="err">:</span> <span class="nx">the</span> <span class="nx">cssObjects</span> <span class="nx">will</span> <span class="nx">always</span> <span class="nx">appear</span> <span class="k">in</span> <span class="nx">the</span> <span class="nx">same</span> <span class="nx">locations</span> <span class="nx">relative</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">camera</span><span class="p">.</span> <span class="o">&lt;</span><span class="sr">/p&gt;  </span><span class="err"> 
+</span>  <span class="o">&lt;</span><span class="sr">/body&gt;</span></code></pre></figure>
+
+<h3 id="code-file-appjs">Code file (app.js)</h3>
+<p>This example (like the next one, Periodic table) is adapted and simplified from the three.js periodic table example. For the original version, see http://threejs.org/examples/#css3d_periodictable.</p>
+
+<p>We start by initializing (see 1-Getting Started).</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Bootstrap</span><span class="p">.</span><span class="nx">createArgonOptions</span><span class="p">(</span> <span class="nx">Argon</span><span class="p">.</span><span class="nx">immersiveContext</span> <span class="p">);</span>
+<span class="nx">options</span><span class="p">.</span><span class="nx">renderer</span> <span class="o">=</span> <span class="p">{</span> <span class="na">klass</span><span class="p">:</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">CSS3DRenderer</span> <span class="p">};</span>
+<span class="kd">var</span> <span class="nx">three</span> <span class="o">=</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Bootstrap</span><span class="p">(</span> <span class="nx">options</span> <span class="p">);</span>
+<span class="kd">var</span> <span class="nx">eyeOrigin</span> <span class="o">=</span> <span class="nx">three</span><span class="p">.</span><span class="nx">argon</span><span class="p">.</span><span class="nx">objectFromEntity</span><span class="p">(</span><span class="nx">Argon</span><span class="p">.</span><span class="nx">immersiveContext</span><span class="p">.</span><span class="nx">eyeOrigin</span><span class="p">);</span></code></pre></figure>
+
+<p>eyeOrigin is the Argon object linked to the (Argon-Cesium) Entity that contains the position of the camera. All the 6 objects that we will create will be positioned relative to eyeOrigin.</p>
+
+<h3 id="creating-and-placing-the-6-directional-signs-around-the-camera--user">Creating and placing the 6 directional signs around the camera / user</h3>
+<p>Table is an array of arrays; each inner array contains information for one of the six direction signs to be created. The first three elements in the array consist of textual information that will be displayed on the sign; the next three specify the x-y-z displacement from the camera (in meters); the last three are the x-y-z values of the rotation vector for the sign. The sign needs to be rotated so that the front faces the user / camera.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">table</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span> <span class="s2">"N"</span><span class="p">,</span> <span class="s2">"North"</span><span class="p">,</span> <span class="s2">"(Negative Z)"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">600</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span> <span class="s2">"S"</span><span class="p">,</span> <span class="s2">"South"</span><span class="p">,</span> <span class="s2">"(Positive Z)"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">,</span> <span class="mi">0</span>  <span class="p">],</span>
+    <span class="p">[</span> <span class="s2">"E"</span><span class="p">,</span> <span class="s2">"East"</span><span class="p">,</span> <span class="s2">"(Positive X)"</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span>
+    <span class="p">[</span> <span class="s2">"W"</span><span class="p">,</span> <span class="s2">"West"</span><span class="p">,</span> <span class="s2">"(Negative X)"</span><span class="p">,</span> <span class="o">-</span><span class="mi">600</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span>
+    <span class="p">[</span> <span class="s2">"U"</span><span class="p">,</span> <span class="s2">"Up"</span><span class="p">,</span> <span class="s2">"(Positive Y)"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">],</span>
+    <span class="p">[</span> <span class="s2">"D"</span><span class="p">,</span> <span class="s2">"Down"</span><span class="p">,</span> <span class="s2">"(Negative Y)"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">600</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>  <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">]</span>
+  <span class="p">];</span></code></pre></figure>
+
+<p>We create a root object in three.js, to which we attach all the others.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">objects</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="kd">var</span> <span class="nx">root</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Object3D</span><span class="p">()</span></code></pre></figure>
+
+<p>We loop through the table, creating the divs that make up each sign.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="k">for</span> <span class="p">(</span> <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">table</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">item</span> <span class="o">=</span> <span class="nx">table</span><span class="p">[</span> <span class="nx">i</span> <span class="p">];</span>
+
+    <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span> <span class="s1">'div'</span> <span class="p">);</span>
+    <span class="nx">element</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">'element'</span><span class="p">;</span>
+    <span class="nx">element</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'rgba(200,120,200,1)'</span><span class="p">;</span>
+
+    <span class="kd">var</span> <span class="nx">symbol</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span> <span class="s1">'div'</span> <span class="p">);</span>
+    <span class="nx">symbol</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">'symbol'</span><span class="p">;</span>
+    <span class="nx">symbol</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">item</span><span class="p">[</span> <span class="mi">0</span> <span class="p">];</span>
+    <span class="nx">element</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span> <span class="nx">symbol</span> <span class="p">);</span>
+
+    <span class="kd">var</span> <span class="nx">details</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span> <span class="s1">'div'</span> <span class="p">);</span>
+    <span class="nx">details</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">'details'</span><span class="p">;</span>
+    <span class="nx">details</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">item</span><span class="p">[</span> <span class="mi">1</span> <span class="p">]</span> <span class="o">+</span> <span class="s1">'&lt;br&gt;'</span> <span class="o">+</span> <span class="nx">item</span><span class="p">[</span> <span class="mi">2</span> <span class="p">];</span>
+    <span class="nx">element</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span> <span class="nx">details</span> <span class="p">);</span></code></pre></figure>
+
+<p>Here we create the 3D object from the div element, push it on a stack for use later, and then add the new object to the root object.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">object</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">CSS3DObject</span><span class="p">(</span> <span class="nx">element</span> <span class="p">);</span>
+   <span class="nx">object</span><span class="p">.</span><span class="nx">matrixAutoUpdate</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+   <span class="nx">objects</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span> <span class="nx">object</span> <span class="p">);</span>
+   <span class="nx">root</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">object</span><span class="p">);</span>
+ </code></pre></figure>
+
+<p>The root object now has all six of the signs; so we attach it to the eyeOrigin.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">eyeOrigin</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">root</span><span class="p">);</span>
+ </code></pre></figure>
+
+<p>Finally we loop through and position the six sign objects at the compass points by copying the position vector from the table array into the object. We also rotate each sign so that it faces the camera/user.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="k">for</span> <span class="p">(</span> <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">objects</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">item</span> <span class="o">=</span> <span class="nx">table</span><span class="p">[</span> <span class="nx">i</span> <span class="p">];</span>
+      <span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Object3D</span><span class="p">();</span>
+      <span class="c1">// three position values</span>
+      <span class="nx">target</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">item</span><span class="p">[</span> <span class="mi">3</span> <span class="p">];</span>
+      <span class="nx">target</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">item</span><span class="p">[</span> <span class="mi">4</span> <span class="p">];</span>
+      <span class="nx">target</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="nx">item</span><span class="p">[</span> <span class="mi">5</span> <span class="p">];</span>
+      <span class="c1">//the three axes of rotation</span>
+      <span class="nx">target</span><span class="p">.</span><span class="nx">rotation</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">item</span><span class="p">[</span> <span class="mi">6</span> <span class="p">];</span>      
+      <span class="nx">target</span><span class="p">.</span><span class="nx">rotation</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">item</span><span class="p">[</span> <span class="mi">7</span> <span class="p">];</span>   
+      <span class="nx">target</span><span class="p">.</span><span class="nx">rotation</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="nx">item</span><span class="p">[</span> <span class="mi">8</span> <span class="p">];</span>   
+
+      <span class="nx">object</span> <span class="o">=</span> <span class="nx">objects</span><span class="p">[</span> <span class="nx">i</span> <span class="p">];</span>
+      <span class="nx">object</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">copy</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">position</span><span class="p">);</span>
+      <span class="nx">object</span><span class="p">.</span><span class="nx">rotation</span><span class="p">.</span><span class="nx">copy</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">rotation</span><span class="p">);</span>
+      <span class="nx">object</span><span class="p">.</span><span class="nx">updateMatrix</span><span class="p">();</span>
+  <span class="p">}</span>
+ </code></pre></figure>
+
+<p>Because all the objects are placed relative to the eyeOrigin, they will move with the user/camera. In the next tutorial-example (5-Periodic), we show a more elaborate version of this same idea and also illustrates how the user can interact with 3D objects through the use of buttons on the screen.</p>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/tutorials/WelcomePage.html">
+            Welcome
+            <small>01 Mar 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/tutorials/Tutorial6.html">
+            Tutorial 6 - Using Argon.js with Vuforia
+            <small>01 Mar 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/tutorials/Tutorial5.html">
+            Tutorial 5 - Geolocation
+            <small>01 Mar 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Overview &middot; Argonjs
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>This site contains a collection of tutorials for web developers using <a href="http://argonjs.io" target="_blank">argon.js</a> to add AR content to a web application.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <li class="sidebar-nav-item"><a href="/tutorials/WelcomePage">Home</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Overview">Overview</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial1">Tutorial 1</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial2">Tutorial 2</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial3">Tutorial 3</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial4">Tutorial 4</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial5">Tutorial 5</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial6">Tutorial 6</a></li>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about">About</a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+
+    <a class="sidebar-nav-item" href="/argon-tutorials.zip">Download</a>
+    <a class="sidebar-nav-item" href="https://github.com/argonjs/argon.js">GitHub project</a>
+    <span class="sidebar-nav-item">Currently v1.0.0</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2016. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Argonjs</a>
+            <small>Tutorials</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Overview</h1>
+  <span class="post-date">01 Mar 2016</span>
+  <p>This site contains a collection of tutorials for web developers using argon.js to add AR content to a web application. On this page, we provide an overview of the design of argon.js, introducing the terminology and concepts used by the framework. In the tutorials, we will go through a sequence of examples that show how to leverage the various features of argon.js in a web application.</p>
+
+<h3 id="design-goals">DESIGN GOALS</h3>
+
+<p>The goal of the argon.js framework and associated Argon AR-enabled web browser (currently on iOS) is to use web technologies to create fully-registered 3D AR applications that leverage 3D graphics, geo-spatial-positioning, and computer-vision tracking (currently using <a href="https://www.vuforia.com/">Qualcomm’s Vuforia</a> library). While all these capabilities are currently available only in the <em>Argon browser, argon.js</em> was designed to help developers create platform-independent AR web content that will eventually run on other platforms as the necessary features for 3D AR become available. Therefore, the central design goal of <em>argon.js</em> is to provide an abstraction layer between the web-app and the browser.</p>
+
+<h3 id="abstractions">ABSTRACTIONS</h3>
+
+<p>The argon.js <strong>abstractions</strong> are based around an AR <strong>Context</strong> in which AR content lives. A <strong>Context</strong> combines AR content with some representation of <strong>Reality</strong>. On a mobile phone or tablet, this <strong>Reality</strong> will usually be video-mixed AR (overlaying graphics on the video from the device’s camera), but the <strong>Reality</strong> could also include geo-located panoramic images, remote video, or simple transparency on an optical see-through display, to name a few. A Reality is defined by a visual representation of the world and a <strong>Reference Frame</strong> that defines the 3D eye position of the viewer relative to the <strong>Reality</strong>’s visual representation (the eye <strong>Reference Frame</strong>). Some <strong>Realities</strong> may contain more <strong>Reference Frames</strong> as well (e.g., our current <strong>Realities</strong> define an eyeOrigin reference frame that is positioned at the location of the eye, but oriented such that the z-axis points up and the y-axis points north, following geospatial conventions).</p>
+
+<h3 id="reactive-programming">REACTIVE PROGRAMMING</h3>
+
+<p><em>argon.js</em> follows a reactive programming model. Programmers do not create <strong>Contexts</strong>; they either request a specific <strong>Context</strong> (e.g., one that displays a certain kind of panoramic image) or express the capabilities they need (e.g., geolocation, Vuforia vision tracking), and <em>argon.js</em> supplies a Context based on the capabilities of the platform. By encouraging developers to develop applications based on the capabilities they need, <em>argon.js</em> applications are more likely to run on new platforms as they become available.</p>
+
+<p>A second reason for using a reactive programming model is to support situations where the <strong>Reality</strong> may need to change while the channel is running. The <em>argon.js</em> framework anticipates a future in which custom AR browsers may give users control over the way they interact with AR content, and let them (not the applications) control how they are displayed by allowing them to change their view of <strong>Reality</strong>. For example, a user might want to switch from live video to remote video to a virtual flyover of their area, while an AR application is running. Similarly, in these future browsers, users may want to run multiple AR applications simultaneously, and different application requirements may cause the browser to use different <strong>Realities</strong> for the different applications. We will be exploring these ideas with the <em>Argon3 browser</em> (which already allows multiple channels to run and be visible at the same time, for example), and their needs have informed the design of <em>argon.js</em>.</p>
+
+<p><em>argon.js</em> does not prescribe or support any particular rendering or content library. Rather, it provides a uniform view of the data necessary for a real-time 3D AR application to the web developer. In our work, we have been using the <a href="http://threejs.org/">three.js</a> rendering library for 3D content and have created a utility library, <em>argon-three.js</em>, to simplify using Argon and Three together. This library also serves as an example of how to integrate other web content libraries with <em>argon.js</em> (e.g., we plan on creating a binding to the FamousEngine soon).</p>
+
+<h3 id="frames-of-reference-and-local-rendering">FRAMES OF REFERENCE AND LOCAL RENDERING</h3>
+
+<p>One of Argon’s main features is providing geospatial <strong>Reference Frames</strong> for all AR content and making it simple to render content relative to those <strong>Reference Frames</strong>. Programmers must therefore be aware of the relationship between the <em>argon.js</em> <strong>Reference Frames</strong> and the coordinate system used by a rendering library such as <em>three.js</em>. In Argon, all objects are represented in geospatial coordinates, using <a href="http://cesiumjs.org/">cesium.js</a> <em>Entities</em>. This allows accurate representation and manipulation of frames of reference anywhere on the Earth, and (using Cesium’s INERTIAL reference frames) anywhere in celestial coordinates relative to the earth.</p>
+
+<p>The geospatial coordinate system used for these reference frames is not convenient for rendering with a typical 3D graphics library: it is centered at the center of the earth, with z being the line between the north and south poles and the xy plane going through the equator. The values of objects on the surface of the earth in this frame make no intuitive sense to a developer, and the size of the numbers used in this frame can present problems to some rendering systems. Therefore, <em>argon.js</em> defines a localOrigin <strong>Reference Frame</strong>, which is an arbitrary location on the surface of the earth near the eye <strong>Reference Frame</strong>, oriented such that (like eyeOrigin) the z-axis is pointing up and the y-axis is pointing north. (Currently, localOrigin is initialized to the location of the device when the web application is launched, and reset when the eye is more than 5km from the localOrigin, although this implication detail may change).</p>
+
+<p>In <em>argon-three.js</em>, the origin of the <em>three.js</em> scene is the localOrigin, and all objects in the three.js scene are positioned relative to it. We expect any rendering library would leverage the localOrigin similarly. By keeping the rendering camera near the origin of the world, floating point accuracy is maximized close to the user, and objects far from the origin (which may suffer floating point artifacts) are also far from the camera (minimizing the impact of those artifacts).</p>
+
+<p>The implication of using an arbitrary local origin for rendering is three-fold:</p>
+
+<ul>
+  <li>All content in the 3D scene (i.e., all 3D content in the world) should be a child of some Object3D in the scene that is positioned relative to some Cesium Entity (argon-three.js provides utility functions to create these relationships and maintains them automatically). argon-three.js will automatically update the position and orientation of those entities when the localOrigin changes.</li>
+  <li>The absolute 3D position and orientation of content in the 3D world can change over time and has no pre-defined relationship to geospatial coordinates. To get the geospatial location of an object in the scene (e.g., of an Object3D in the three.js scene graph), the programmer must first get the geospatial coordinates of a Cesium Entity that corresponds to an Object3D that is an ancester of the object in the scene graph, and combine it with the relative position and orientation of this child object.</li>
+  <li>An argon.js application should not change the position and orientation of an Object3D in the scene bound to some Cesium Entity, as Argon will reset their position and orientation regularly.</li>
+</ul>
+
+<h3 id="a-note-about-html5-dom-performance-in-3d-web-applications">A Note About HTML5 DOM Performance in 3D Web Applications</h3>
+
+<p>The performance of any web application is bound to the way an application interacts with the DOM. Any time the value of a DOM property is changed, the DOM is marked as dirty and scheduled to be repaired and refreshed. If a DOM property is read when the DOM is dirty, the entire page will be immediately repaired and reflowed before returning the value of the DOM property. In a traditional 2D web page, this guarantees that the properties are correct, and that content is updated automatically when something changes. When nothing changes, the page does not need to be refreshed.</p>
+
+<p>However, in a 3D web page, such as those created with <em>argon.js</em>, the page is rendered continuously, at speeds of 30, 60 or more times per second. DOM repair is <strong>very expensive</strong>, and even a single extra repair will dramatically affect the performance of a 3D web app.</p>
+
+<p>Therefore, we strongly advise against unnecessarily reading any DOM properties, especially after changing any properties. Similarly, property updates should also be minimized.</p>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/tutorials/WelcomePage.html">
+            Welcome
+            <small>01 Mar 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/tutorials/Tutorial6.html">
+            Tutorial 6 - Using Argon.js with Vuforia
+            <small>01 Mar 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/tutorials/Tutorial5.html">
+            Tutorial 5 - Geolocation
+            <small>01 Mar 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+  </body>
+</html>

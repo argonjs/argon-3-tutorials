@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Argonjs &middot; Tutorials
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>This site contains a collection of tutorials for web developers using <a href="http://argonjs.io" target="_blank">argon.js</a> to add AR content to a web application.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <li class="sidebar-nav-item"><a href="/tutorials/WelcomePage">Home</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Overview">Overview</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial1">Tutorial 1</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial2">Tutorial 2</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial3">Tutorial 3</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial4">Tutorial 4</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial5">Tutorial 5</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial6">Tutorial 6</a></li>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about">About</a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+
+    <a class="sidebar-nav-item" href="/argon-tutorials.zip">Download</a>
+    <a class="sidebar-nav-item" href="https://github.com/argonjs/argon.js">GitHub project</a>
+    <span class="sidebar-nav-item">Currently v1.0.0</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2016. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Argonjs</a>
+            <small>Tutorials</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/tutorials/WelcomePage.html">
+        Welcome
+      </a>
+    </h1>
+
+    <span class="post-date">01 Mar 2016</span>
+
+    <p>This site contains a collection of tutorials for web developers using argon.js to add AR content to a web application. On this page, we provide an overview of the design of argon.js, introducing the terminology and concepts used by the framework. In the tutorials, we will go through a sequence of examples that show how to leverage the various features of argon.js in a web application.</p>
+
+<ul>
+  <li><a href="/tutorials/Tutorial1">Tutorial 1 - Getting Started</a></li>
+  <li><a href="/tutorials/Tutorial2">Tutorial 2 - Compass</a></li>
+  <li><a href="/tutorials/Tutorial3">Tutorial 3 - Periodic table</a></li>
+  <li><a href="/tutorials/utorial4">Tutorial 4 - Panorama Reality</a></li>
+  <li><a href="/tutorials/Tutorial5">Tutorial 5 - Geolocation</a></li>
+  <li>
+    <p><a href="/tutorials/Tutorial6">Tutorial 6 - Using Argon.js with Vuforia</a></p>
+  </li>
+  <li>
+    <p>For more information about Argon3, please visit <a href="/tutorials/Overview">overview</a>.</p>
+  </li>
+  <li>Download open-source Argon.js framework from Argonjs <a href="https://github.com/argonjs/argon.js">Github repository</a> and <a href="/argon-tutorials.zip">Download</a> tutorials source files from this site</li>
+</ul>
+
+<p>The initial release of argon.js works primarily in the <a href="https://itunes.apple.com/us/app/argon3/id944297993?ls=1&amp;mt=8">Argon3</a> browser for iOS, and these tutorials focus specifically on using argon.js to create and debug AR web applications for the Argon3 browser. As additional support is added to argon.js for other platforms, we will expand the tutorials as appropriate.</p>
+
+<p>In addition to supporting argon.js content, the Argon3 browser allows multiple AR applications to run at the same time, with their content overlaid. Designers create AR experiences using the argon.js framework and other familiar web technologies, including HTML, CSS3, and popular javascript frameworks, mixing traditional web media content (images, audio, video) with 3D content rendered via WebGL. These tutorials illustrate  basic concepts and functions for coding AR experiences in Argon, using the <a href="threejs.org">three.js</a> library to manage and render HTML and WebGL content.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/tutorials/Tutorial6.html">
+        Tutorial 6 - Using Argon.js with Vuforia
+      </a>
+    </h1>
+
+    <span class="post-date">01 Mar 2016</span>
+
+    <h3 id="before-you-start">Before you start</h3>
+<p>Make sure you have completed <a href="/about">tutorial 1</a>
+Follow:<a href="https://developer.vuforia.com/sites/default/files/sample-apps/targets/imagetargets_targets.pdf">this</a> link to view the image targets used in this tutorial</p>
+
+<h3 id="what-you-should-see">What you should see</h3>
+<p>Download <a href="https://itunes.apple.com/us/app/argon3/id944297993?ls=1&amp;mt=8">Argon3</a> and <a href="/argon-tutorials/tutorial3">Try Now</a></p>
+
+<ol>
+  <li>When your camera captures the stones image, you should see a colorful, 3d box floating and spinning above the image.</li>
+</ol>
+<div class="video">
+    <figure>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/cxAPl8iK5cc" frameborder="0" allowfullscreen=""></iframe>
+    </figure>
+</div>
+
+<ol>
+  <li>When your camera captures the wood chips image, you should see an animated 3D graphic monster. (It looks something like a four-legged lizard walking in place.)
+You can move your camera to view the 3d objects from different angles.</li>
+</ol>
+<div class="video">
+    <figure>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/ohvHKrk5AY8" frameborder="0" allowfullscreen=""></iframe>
+    </figure>
+</div>
+
+<h3 id="introduction">Introduction</h3>
+<p>Vuforia is the image tracking system from Qualcomm Vuforia, which argon.js uses to recognize an image from a database and register graphics in relation to the image. This tutorial shows how to use an image from a database within argon.js. To use this feature effectively, you need to register with Vuforia and create your own database of images. When you register with Vuforia, you will receive a key to your database. This key guarantees that only the users of your applications can access your database. To use Vuforia in Argon3, you will need to insert an encrypted form of your key into your code.</p>
+
+<p>For the purposes of this tutorial example, however, we can use the standard “stones and chips” images provided by Vuforia without a developer’s key. On top of the stones image, we will place a box that spins. On top of the chips images, we place an animated 3D graphic monster. (It looks something like a four-legged lizard walking in place.)</p>
+
+<h3 id="main-file-indexhtml">Main file (index.html)</h3>
+<p>Here is the html that goes into the body. There is no “argon-immersive-context” div in this example. The body contains text that appears when the application is set to Page Mode: the text identifies the example for the user and provides a link to the stones and chips image.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">body</span> <span class="nx">style</span><span class="o">=</span><span class="s2">"background-color:rgba(255,255,255,0.7)"</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>  
+    <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">Vuforia</span> <span class="nx">image</span> <span class="nx">tracking</span> <span class="nx">example</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">This</span> <span class="nx">example</span> <span class="nx">illustrates</span> <span class="nx">the</span> <span class="nx">use</span> <span class="nx">of</span> <span class="nx">Vuforia</span> <span class="k">for</span> <span class="nx">image</span> <span class="nx">tracking</span><span class="p">.</span> <span class="nx">It</span> <span class="nx">is</span> <span class="nx">designed</span> <span class="nx">to</span> <span class="nx">work</span> <span class="kd">with</span> <span class="nx">the</span> <span class="nx">standard</span> <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">"https://developer.vuforia.com/sites/default/files/sample-apps/targets/imagetargets_targets.pdf"</span><span class="o">&gt;</span> <span class="s2">"stones and chips"</span> <span class="nx">Vuforia</span> <span class="nx">image</span><span class="o">&lt;</span><span class="sr">/a&gt;.&lt;/</span><span class="nx">P</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/body&gt;</span></code></pre></figure>
+
+<h3 id="code-file-appjs">Code file (app.js)</h3>
+<p>We start with the standard setup. We are using the immersive context (the camera built into the device). We use webgl to render the scene, including the 3D graphic object that we will present.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"> <span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Bootstrap</span><span class="p">.</span><span class="nx">createArgonOptions</span><span class="p">(</span> <span class="nx">Argon</span><span class="p">.</span><span class="nx">immersiveContext</span> <span class="p">);</span>
+ <span class="nx">options</span><span class="p">.</span><span class="nx">renderer</span> <span class="o">=</span> <span class="p">{</span> <span class="na">klass</span><span class="p">:</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">WebGLRenderer</span> <span class="p">};</span>
+ <span class="kd">var</span> <span class="nx">three</span> <span class="o">=</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Bootstrap</span><span class="p">(</span> <span class="nx">options</span> <span class="p">);</span></code></pre></figure>
+
+<p>We add light to our scene, because we will have a 3D object that needs to be lighted. These are three.js objects and methods, which you can find documented at http://threejs.org/docs/:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">light</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">DirectionalLight</span><span class="p">(</span> <span class="mh">0xffffff</span><span class="p">,</span> <span class="mi">1</span> <span class="nx">light</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span> <span class="p">).</span><span class="nx">normalize</span><span class="p">();</span>
+<span class="nx">three</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span> <span class="nx">light</span> <span class="p">);</span>
+<span class="kd">var</span> <span class="nx">pointLight</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PointLight</span><span class="p">(</span> <span class="mh">0xffffff</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">1000</span> <span class="p">)</span> <span class="nx">three</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">pointLight</span><span class="p">);</span></code></pre></figure>
+
+<p>Tell argon.js that we require Vuforia for image tracking:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">Argon</span><span class="p">.</span><span class="nx">immersiveContext</span><span class="p">.</span><span class="nx">setRequiredCapabilities</span><span class="p">(</span><span class="s1">'Vuforia'</span><span class="p">)</span></code></pre></figure>
+
+<h3 id="the-license-key">The license key</h3>
+<p>Then we initialize Vuforia with a license key. If the developer is using his or her own database, then the encrypted licenseKey would go here (see the end of this tutorial for how to do this). We put null and default to the Vuforia chips and stones image.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">Argon</span><span class="p">.</span><span class="nx">Vuforia</span><span class="p">.</span><span class="nx">initialize</span><span class="p">({</span>
+    <span class="na">licenseKey</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="na">startCamera</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">api</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// load, activate, and use our dataSet</span>
+    <span class="nx">api</span><span class="p">.</span><span class="nx">loadDataSetFromURL</span><span class="p">(</span><span class="s1">'dataset/StonesAndChips.xml'</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">dataSet</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">dataSet</span><span class="p">.</span><span class="nx">activate</span><span class="p">()</span>
+      <span class="nx">setupStonesContent</span><span class="p">(</span><span class="nx">dataSet</span><span class="p">.</span><span class="nx">trackables</span><span class="p">.</span><span class="nx">stones</span><span class="p">)</span>
+      <span class="nx">setupChipsContent</span><span class="p">(</span><span class="nx">dataSet</span><span class="p">.</span><span class="nx">trackables</span><span class="p">.</span><span class="nx">chips</span><span class="p">)</span>
+    <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="nx">api</span><span class="p">.</span><span class="nx">startObjectTracker</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">api</span><span class="p">.</span><span class="nx">hintMaxSimultaneousImageTargets</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">api</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+  <span class="p">})</span></code></pre></figure>
+
+<h3 id="setting-up-the-trackables">Setting up the trackables</h3>
+<p>This function sets up the content that will appear over the stones images. In this case we use three.js methods to construct and texture the box. This function shows the box when the stones image is recognized by Argon and removes the box when the image is lost (i.e. if the user moves the phone so that the camera can no longer see the image). When the box is first recognized, it spins 10 times, then stops.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">setupStonesContent</span><span class="p">(</span> <span class="nx">stonesEntity</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// create an Object3D from the stones entity</span>
+    <span class="kd">var</span> <span class="nx">stones</span> <span class="o">=</span> <span class="nx">three</span><span class="p">.</span><span class="nx">argon</span><span class="p">.</span><span class="nx">objectFromEntity</span><span class="p">(</span><span class="nx">stonesEntity</span><span class="p">)</span>
+    <span class="c1">// create a box</span>
+    <span class="kd">var</span> <span class="nx">box</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span><span class="p">(</span><span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">BoxGeometry</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">MeshNormalMaterial</span><span class="p">())</span>
+    <span class="nx">box</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">25</span>
+    <span class="kd">var</span> <span class="nx">boxSpin</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1">// add and spin the box when the stones trackable is found</span>
+    <span class="nx">stones</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'argon:found'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">stones</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">box</span><span class="p">)</span>
+      <span class="nx">boxSpin</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="p">})</span>
+    <span class="c1">// remove the box when the stones trackable is lost</span>
+    <span class="nx">stones</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'argon:lost'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">stones</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">box</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="c1">// animate the box</span>
+    <span class="nx">three</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'update'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">box</span><span class="p">.</span><span class="nx">rotation</span><span class="p">.</span><span class="nx">y</span> <span class="o">+=</span> <span class="nx">boxSpin</span> <span class="o">*</span> <span class="nx">three</span><span class="p">.</span><span class="nx">Time</span><span class="p">.</span><span class="nx">delta</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">boxSpin</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">boxSpin</span> <span class="o">-=</span> <span class="mi">10</span> <span class="o">*</span> <span class="nx">three</span><span class="p">.</span><span class="nx">Time</span><span class="p">.</span><span class="nx">delta</span>
+      <span class="k">else</span> <span class="nx">boxSpin</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="p">})</span>
+  <span class="p">}</span></code></pre></figure>
+
+<p>This function sets up the content to appear over the chips image. In this case we load a prebuilt model of a lizard. The function shows the lizard when the chips image is recognized by argon.js and removes it when the image is lost.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">setupChipsContent</span><span class="p">(</span> <span class="nx">chipsEntity</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// create an Object3D from the chips entity</span>
+    <span class="kd">var</span> <span class="nx">chips</span> <span class="o">=</span> <span class="nx">three</span><span class="p">.</span><span class="nx">argon</span><span class="p">.</span><span class="nx">objectFromEntity</span><span class="p">(</span><span class="nx">chipsEntity</span><span class="p">)</span>
+    <span class="c1">// add the model when the chips trackable is found</span>
+    <span class="nx">chips</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'argon:found'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">getModel</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">model</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">chips</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">model</span><span class="p">)</span>
+      <span class="p">})</span>
+    <span class="p">})</span>
+    <span class="c1">// remove the model when the chips trackable is lost</span>
+    <span class="nx">chips</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'argon:lost'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">getModel</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">model</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">chips</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">model</span><span class="p">)</span>
+      <span class="p">})</span>
+    <span class="p">})</span>
+  <span class="p">}</span></code></pre></figure>
+
+<p>This is the function that loads the lizard model, called by the setupChips function above.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">modelPromise</span> <span class="o">=</span> <span class="nx">getModel</span><span class="p">()</span>
+  <span class="kd">function</span> <span class="nx">getModel</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">modelPromise</span> <span class="o">=</span> <span class="nx">modelPromise</span> <span class="o">||</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// load the model</span>
+      <span class="kd">var</span> <span class="nx">loader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">JSONLoader</span><span class="p">()</span>
+      <span class="nx">loader</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span> <span class="s1">'monster.js'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span> <span class="nx">geometry</span><span class="p">,</span> <span class="nx">materials</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nx">materials</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">morphTargets</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="kd">var</span> <span class="nx">faceMaterial</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">MeshFaceMaterial</span><span class="p">(</span> <span class="nx">materials</span> <span class="p">)</span>
+        <span class="kd">var</span> <span class="nx">morphMesh</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">MorphAnimMesh</span><span class="p">(</span> <span class="nx">geometry</span><span class="p">,</span> <span class="nx">faceMaterial</span> <span class="p">)</span>
+        <span class="nx">morphMesh</span><span class="p">.</span><span class="nx">duration</span> <span class="o">=</span> <span class="mi">1000</span>
+        <span class="nx">morphMesh</span><span class="p">.</span><span class="nx">time</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="nx">morphMesh</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="nx">morphMesh</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+        <span class="nx">morphMesh</span><span class="p">.</span><span class="nx">matrixAutoUpdate</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="nx">morphMesh</span><span class="p">.</span><span class="nx">updateMatrix</span><span class="p">()</span>
+        <span class="c1">// animate the model</span>
+        <span class="nx">three</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'update'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+          <span class="nx">morphMesh</span><span class="p">.</span><span class="nx">updateAnimation</span><span class="p">(</span> <span class="mi">1000</span> <span class="o">*</span> <span class="nx">three</span><span class="p">.</span><span class="nx">Time</span><span class="p">.</span><span class="nx">delta</span> <span class="p">)</span>
+        <span class="p">})</span>
+        <span class="nx">resolve</span><span class="p">(</span><span class="nx">morphMesh</span><span class="p">)</span>
+      <span class="p">})</span>
+    <span class="p">})</span>
+  <span class="p">}</span></code></pre></figure>
+
+<h3 id="testing-the-application">Testing the application</h3>
+
+<p>To test the completed application, you need to print out the stones and chips images or bring them up on a computer screen. Then launch the application on your phone and point it at the images.</p>
+
+<h3 id="creating-an-encrypted-license-key-file">Creating an encrypted license key file</h3>
+
+<p>To use your own Vuforia targets, you must create your own Vuforia license key on the Vuforia website, and use it when initializing Vuforia in argon.js.</p>
+
+<p>Since any file you put on a web server could potentially be copied by anyone with access to that server, argon.js requires that you store the license key in an encrypted JSON file. The license should be in the key field in the JSON, as a string.</p>
+
+<p>In addition, since you don’t want anyone else to simply copy and your Vuforia tracking datasets or your encrypted license, argon.js also requires you to store a set of url pattern’s in the encrypted file, representing valid urls for Vuforia datasets that can be used with this key. The url patterns should be in the urls field in the JSON, as an array of regular expression strings.</p>
+
+<p>The format of the encrypted file, with some examples of possible url patterns for the Vuforia dataset files, is:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
+   <span class="s2">"key"</span><span class="err">:</span> <span class="s2">"---- YOUR VUFORIA LICENSE KEY HERE ---"</span><span class="p">,</span>
+   <span class="s2">"urls"</span><span class="err">:</span> <span class="p">[</span><span class="s2">"^http://www.yourfullyqualifieddomain.com/.*"</span><span class="p">,</span>
+      <span class="s2">"^http[s]?://[A-Za-z0-9-.]*.yourdomain.com/.*"</span><span class="p">,</span>
+      <span class="err">"</span><span class="o">^</span><span class="nx">http</span><span class="p">[</span><span class="nx">s</span><span class="p">]?:</span><span class="c1">//[A-Za-z0-9-.]*.yourdomain.com/directory/to/limit/url/.* ]]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>To encrypt the file, you should encrypt it for the user secure@argonjs.io, using PGP. There are both commercial and free PGP implementations that can be used; we use GPG Tools on MacOSX. With GPGTools installed, fetch the public key for secure@argonjs.io using the “GPG Keychain” application, and then encrypt a file containing your JSON using secure@argonjs.io as the receipient. Do not sign or encrypt the file with a password.</p>
+
+<p>The easiest way to store the encrypted file is in a script element as type “text/plain” in your HTML file, as follows:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"license"</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/plain"</span><span class="o">&gt;-----</span><span class="nx">BEGIN</span> <span class="nx">PGP</span> <span class="nx">MESSAGE</span><span class="o">-----</span>
+<span class="nx">Comment</span><span class="err">:</span> <span class="nx">GPGTools</span> <span class="o">-</span> <span class="nx">https</span><span class="err">:</span><span class="c1">//gpgtools.org</span>
+
+  <span class="nx">hQIMA47tt</span><span class="o">+</span><span class="nx">RhMWHyAQ</span><span class="o">/</span><span class="mi">8</span><span class="nx">Dq0iFIgfZcTpihTvSFcQXGd3ioDdTv</span><span class="o">+</span><span class="nx">pwhUvmwq8kYhg</span>
+  <span class="nx">TwsQzC4U8zV8P62gNFkfFTRM78o19QoxOM1Jpsy6lqwkFNv7a31BFy</span><span class="o">/</span><span class="nx">tSa2s9GYw</span>
+  <span class="nx">D</span><span class="o">+</span><span class="nx">NbNX5vTjYrxILa7BEha4sS38P6J4</span><span class="o">/</span><span class="nx">RQ0neIyOa01y7qjs</span><span class="o">/</span><span class="mi">6</span><span class="nx">il49DTZPPc5SIMA</span>
+  <span class="sr">/V5VkRJQPINR5fUFleInxgwWOjmMSl+dGGEsnxI8wbL2pbdzSs3sqwKigybLjTI</span><span class="err">g
+</span>  <span class="nx">XkrkF49FEjuyD7u5Jw2OIPkdYiSGeYJB5HArWzLgZen9EcvZUqOIYYzCbjAULZFF</span>
+  <span class="mi">2</span><span class="nx">rAXR2wvkmizEp8jPuVe43xrnmw3LGE94IkDyktQ6IFD5PwM2j88gH0th6</span><span class="o">+</span><span class="nx">OD9UR</span>
+  <span class="nx">klR5BzIQmdgksC1h63</span><span class="o">+</span><span class="nx">D</span><span class="o">+</span><span class="nx">LQNoLDtVrOCQ1x69uQSkBLurDVJSW</span><span class="o">/</span><span class="nx">RMPIhyMk6lGtF</span>
+  <span class="nx">cFBhkVXbY9jZ9rFXEAYCdvMUkaiDcxI1eZJxI</span><span class="o">/</span><span class="nx">IGpOawAuXrNfpRl1iOlB9</span><span class="o">/</span><span class="nx">Egfc</span>
+  <span class="nx">HaMexrnQXwsioUjZKDlwxtZKRS</span><span class="c1">//BvUFJuhNV9kYk3ToZ7DBGKRJem1D1MhJ26C4</span>
+  <span class="nx">MWHgOqJ4hMtW7BkOVD7fwKSms</span><span class="o">+</span><span class="nx">lgYgoHhhWypvRzUGXelo0pSGJWKauo8</span><span class="o">/</span><span class="nx">tokNFv</span>
+  <span class="mi">3</span><span class="nx">yDy</span><span class="o">+</span><span class="nx">lzzwOi</span><span class="o">/</span><span class="nx">tUglFID</span><span class="o">/</span><span class="nx">xa</span><span class="o">/</span><span class="nx">HT7J3Its1PStMuYZah7Z7K0sqZ3s9C</span><span class="o">/</span><span class="nx">bK7Pdn8rLS</span>
+  <span class="nx">wBoBJCdUGJqjLA63tThhoLM6zRAR8A</span><span class="o">+</span><span class="mi">4</span><span class="nx">QCrQL8yNf5RkWztmGo</span><span class="o">+</span><span class="mi">7</span><span class="nx">c</span><span class="o">+</span><span class="nx">y6C0I01dAU</span>
+  <span class="nx">pYL95kQelEG9lb3UOsby0uACZAQ1KzZ9hEhglWY4JoGlrYayctMO5gYAUSHYoaGv</span>
+  <span class="nx">Rt7am1wGKCH</span><span class="o">/</span><span class="nx">owsD2LRf3aL4DkN</span><span class="o">+</span><span class="nx">Z5HUnHWYPuBLyFuTyMVF</span><span class="o">/</span><span class="nx">rzsTQrut6BNR41V</span>
+  <span class="mi">2</span><span class="nx">JqVh6kkFY7AEBC</span><span class="o">+</span><span class="nx">yLhSDPoCxsC4Sem2jnqUf1iTsq7fYDFfLcRo3IwjK8qBiZrY</span>
+  <span class="nx">udIn90</span><span class="o">/</span><span class="nx">G9Zrk9Z026rC4</span><span class="o">+</span><span class="mi">4</span><span class="nx">QA1MfLKxDm72cbaA</span><span class="o">==</span>
+  <span class="o">=</span><span class="nx">jWhj</span>
+  <span class="o">-----</span><span class="nx">END</span> <span class="nx">PGP</span> <span class="nx">MESSAGE</span><span class="o">-----</span>
+<span class="o">&lt;</span><span class="sr">/script&gt;</span></code></pre></figure>
+
+<p>Do not put any extra space at the beginning or end of the script element contents, and do not reformat the text.</p>
+
+<p>Now, to use this key in your code, get the contents of the script element and pass it to the Argon.Vuforia.initialize method as the encryptedLicenseData parameter (instead of passing null to licenseKey above).</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">encryptedData</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"license"</span><span class="p">).</span><span class="nx">text</span><span class="p">;</span>
+
+  <span class="c1">// initialize Vuforia with our licencse key</span>
+  <span class="nx">Argon</span><span class="p">.</span><span class="nx">Vuforia</span><span class="p">.</span><span class="nx">initialize</span><span class="p">({</span>
+     <span class="na">encryptedLicenseData</span><span class="p">:</span> <span class="nx">encryptedData</span><span class="p">,</span>
+     <span class="na">startCamera</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">})</span></code></pre></figure>
+
+<p>Once Vuforia is initialized using your encrypted license file, you can use any Vuforia dataset that is loaded from a URL matching one of the patterns in the JSON file.</p>
+
+<p>Note: if a relative URL is passed to api.loadDataSetFromURL, we construct the full address from the base URL of the URL the user used to load your web application. This may be problematic if the user (or your web server) does URL redirection – this is a known problem that we are working on fixing.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/tutorials/Tutorial5.html">
+        Tutorial 5 - Geolocation
+      </a>
+    </h1>
+
+    <span class="post-date">01 Mar 2016</span>
+
+    <h3 id="before-you-start">Before you start</h3>
+<p>Make sure you have completed <a href="/about">tutorial 1</a></p>
+
+<h3 id="what-you-should-see">What you should see</h3>
+<p>Download <a href="https://itunes.apple.com/us/app/argon3/id944297993?ls=1&amp;mt=8">Argon3</a> and <a href="/argon-tutorials/tutorial2">Try Now</a></p>
+
+<p>If you are on the Georgia Tech campus, move your camera around until you see a floating Buzz box.
+Regardless of location, you should see a floating wooden box.</p>
+<div class="video">
+    <figure>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/jPHe-ut4VzY" frameborder="0" allowfullscreen=""></iframe>
+    </figure>
+</div>
+
+<h3 id="introduction">Introduction</h3>
+<p>The Argon3 browser allows the developer to place 3D content in the world for display to the user and interaction with the user. The content can be located 1. relative to the device itself or 2. relative to the earth or the celestial frame. argon.js uses Cesium (http://cesiumjs.org) to establish a precise geolocation for a local point of origin on the earth and then uses that origin for its local frame of reference to locate the camera and any 3D objects the application creates. (See the Background for a fuller explanation of how argon.js uses Cesium.)</p>
+
+<p>This example illustrates both ways of locating content: 1. It finds the current location of the viewer and positions a cube at a well-known nearby location (the Georgia Tech campus, for us). This cube is covered with a texture of Buzz, the Georgia Tech mascot.  2. It creates a second cube a small distance away from where the user was positioned when the example was loaded.  It does this by adding a small amount to the user’s current east-west location, in the local taronhree.js cartesian coordinates.  This illustrates how to create geospatial content based on the current location and update the internal geospatial location of the object</p>
+
+<h3 id="main-file-indexhtml">Main file (index.html)</h3>
+<p>In the index.html, the body tag is in two parts.  The “argon-immersive-context” div is used to create a small dynamic information box at the bottom of the screen that will track the user’s location and the position of the two objects.  Text outside this special div is rendered only when the user enters “Page Mode” by touching the icon in the top right corner of the interface. In this case,  the text in Page Mode offers an explanation of the example that appears on the screen over the background context.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"argon-immersive-context"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"menu"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">button</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"location"</span><span class="o">&gt;</span><span class="nx">lon</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="nx">lat</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div&gt; </span><span class="err"> 
+</span>  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">A</span> <span class="nx">Simple</span> <span class="nx">Geolocation</span> <span class="nx">example</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">This</span> <span class="nx">example</span> <span class="nx">takes</span> <span class="nx">the</span> <span class="nx">current</span> <span class="nx">location</span> <span class="nx">of</span> <span class="nx">the</span> <span class="nx">viewer</span><span class="p">,</span> <span class="nx">and</span> <span class="nx">positions</span> <span class="nx">a</span> <span class="nx">cube</span> <span class="nx">at</span> <span class="nx">a</span> <span class="nx">well</span><span class="o">-</span><span class="nx">known</span> <span class="nx">nearby</span> <span class="nx">location</span> <span class="p">(</span><span class="nx">the</span> <span class="nx">Georgia</span> <span class="nx">Tech</span> <span class="nx">campus</span><span class="p">,</span> <span class="k">for</span> <span class="nx">us</span><span class="p">),</span> <span class="nx">and</span> <span class="nx">creates</span> <span class="nx">a</span> <span class="nx">second</span> <span class="nx">cube</span> <span class="nx">a</span> <span class="nx">small</span> <span class="nx">distance</span> <span class="nx">away</span> <span class="nx">from</span> <span class="nx">where</span> <span class="nx">the</span> <span class="nx">viewer</span> <span class="nx">was</span> <span class="nx">positioned</span> <span class="nx">when</span> <span class="nx">the</span> <span class="nx">example</span> <span class="nx">was</span> <span class="nx">loaded</span><span class="p">.</span>  <span class="nx">We</span> <span class="k">do</span> <span class="k">this</span> <span class="nx">by</span> <span class="nx">adding</span> <span class="nx">a</span> <span class="nx">small</span> <span class="nx">amount</span> <span class="nx">to</span> <span class="nx">our</span> <span class="nx">current</span> <span class="nx">east</span><span class="o">-</span><span class="nx">west</span> <span class="nx">location</span><span class="p">,</span> <span class="k">in</span> <span class="nx">the</span> <span class="nx">local</span> <span class="nx">Three</span><span class="p">.</span><span class="nx">js</span> <span class="nx">cartesian</span> <span class="nx">coordinates</span><span class="p">.</span>  <span class="nx">This</span> <span class="nx">illustrates</span> <span class="nx">how</span> <span class="nx">to</span> <span class="nx">create</span> <span class="nx">geospatial</span> <span class="nx">content</span> <span class="nx">based</span> <span class="nx">on</span> <span class="nx">the</span> <span class="nx">current</span> <span class="nx">location</span><span class="p">,</span> <span class="nx">and</span> <span class="nx">update</span> <span class="nx">the</span> <span class="nx">internal</span> <span class="nx">geospatial</span> <span class="nx">location</span> <span class="nx">of</span> <span class="nx">the</span> <span class="nx">object</span><span class="p">.</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/body&gt;</span></code></pre></figure>
+
+<h3 id="code-file-appjs">Code file (app.js)</h3>
+<p>To begin we define the immersive Context to be a panorama (instead of the device’s camera, which is the default).</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js">  <span class="kd">var</span> <span class="nx">panoramaReality</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Argon</span><span class="p">.</span><span class="nx">Reality</span><span class="p">.</span><span class="nx">Panorama</span><span class="p">;</span>
+  <span class="nx">Argon</span><span class="p">.</span><span class="nx">immersiveContext</span><span class="p">.</span><span class="nx">setRequiredReality</span><span class="p">(</span><span class="nx">panoramaReality</span><span class="p">);</span></code></pre></figure>
+
+<p>Now we create the panorama itself.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/tutorials/Tutorial4.html">
+        Tutorial 4 - Panorama Reality
+      </a>
+    </h1>
+
+    <span class="post-date">01 Mar 2016</span>
+
+    <h3 id="before-you-start">Before you start</h3>
+<p>Make sure you have completed <a href="/about">tutorial 1</a></p>
+
+<h3 id="what-you-should-see">What you should see</h3>
+<p>As you move your camera around, you should see a panoramic, 360-degree view of Atlanta’s midtown.</p>
+<div class="video">
+    <figure>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/9CzeORBjOXk" frameborder="0" allowfullscreen=""></iframe>
+    </figure>
+</div>
+
+<h3 id="introduction">Introduction</h3>
+<p>In Geolocation, Vuforia, Compass, Periodic Table tutorials, we have used the default reality (the device’s camera to show the world around the user). As noted in the Overview, Argon3 can display other realities (other backgrounds). Currently there is one other reality that has been defined and is available for use: <a href="https://en.wikipedia.org/wiki/Panorama">static panoramic images</a>.</p>
+
+<p>A panoramic image provides a 360-degree view around the user from one specific geolocation. argon.js accepts imagery in two forms:</p>
+
+<ol>
+  <li>a single equirectangular projection jpg or png</li>
+  <li>a “skybox” consisting of 6 image panels.
+We will see the code below for creating each kind.</li>
+</ol>
+
+<h3 id="useful-hints--size-limitation">Useful hints / Size Limitation</h3>
+<p>The equirectangular version of the Argon panorama is mapped as a single texture onto the inside of a sphere using WebGL. The texture size is limited, and the limits may be different on different devices.</p>
+
+<p>At present, a texture of <em>4000 x 2000</em> seems to be a safe limit. (The aspect ratio should always be 2x1) You can achieve greater resolution using the skype box, because each of the 6 panels is a single texture mapped onto one surface of a cube. Each texture is approximately 4000 x 4000.</p>
+
+<h3 id="generating-panoramas">Generating Panoramas</h3>
+<p>Panoramas can be created using a tripod, a “panohead”, and a conventional camera— by taking a series of overlapping images and then stitching them together using software such as <a href="https://www.ptgui.com">PTGui</a>. PTGui (or similar software) will then generate an equirectangular image or the skybox panels that can be used in Argon. You can also generate “quick-and-dirty” panoramas using apps that exploit the smartphone camera directly, such as Microsoft’s Photosynth.</p>
+
+<h3 id="main-file-indexhtml">Main file (index.html)</h3>
+<p>In the html file, we call the others scripts as usual. The body tag contains an explanation of the pano, which the user will see in Page mode.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">body</span> <span class="nx">style</span><span class="o">=</span><span class="s2">"background-color:rgba(255,255,255,0.7)"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">Panorama</span> <span class="nx">as</span> <span class="nx">reality</span> <span class="p">(</span><span class="nx">background</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">This</span> <span class="nx">example</span> <span class="nx">illustrate</span> <span class="nx">the</span> <span class="nx">use</span> <span class="nx">of</span> <span class="nx">a</span> <span class="nx">panorama</span> <span class="nx">as</span> <span class="nx">an</span> <span class="nx">Argon</span> <span class="nx">reality</span><span class="p">...</span>
+        <span class="p">...</span>
+      <span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/body&gt;</span></code></pre></figure>
+
+<h3 id="code-file-appjs">Code file (app.js)</h3>
+<p>To begin we define the immersive Context to be a panorama (instead of the device’s camera, which is the default).</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js">  <span class="kd">var</span> <span class="nx">panoramaReality</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Argon</span><span class="p">.</span><span class="nx">Reality</span><span class="p">.</span><span class="nx">Panorama</span><span class="p">;</span>
+  <span class="nx">Argon</span><span class="p">.</span><span class="nx">immersiveContext</span><span class="p">.</span><span class="nx">setRequiredReality</span><span class="p">(</span><span class="nx">panoramaReality</span><span class="p">);</span></code></pre></figure>
+
+<p>Now we create the panorama itself.</p>
+
+<h3 id="the-equirectangular-panorama">The equirectangular panorama</h3>
+<p>For the equirectangular image pano, we specify that type and the source.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">pano1</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s1">'equirectangular'</span><span class="p">,</span>
+    <span class="na">source</span><span class="p">:</span> <span class="s1">'pano2.jpg'</span><span class="p">,</span>
+    <span class="na">headingOffset</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+    <span class="na">cartographicDegrees</span><span class="p">:</span> <span class="p">[</span><span class="mf">33.7758</span><span class="p">,</span><span class="mf">84.3947</span><span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>The headingOffset indicates where north is defined in the panorama (in degrees from 0 to 359). If the center of the pano image is north, then the headingOffset is 0, as indicated here. The variable cartographicDegrees indicates the geolocation of the Panorama: where the image was taken or where we want to represent the image as being located on the earth.</p>
+
+<h3 id="the-skybox-6-panel-panorama">The skybox (6 panel) panorama</h3>
+<p>To create a skybox pano, the code is:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">pano2</span><span class="o">=</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s1">'skybox'</span><span class="p">,</span>
+    <span class="na">source</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">up</span><span class="p">:</span> <span class="s1">'woodruff/up.png'</span><span class="p">,</span>
+        <span class="na">down</span><span class="p">:</span> <span class="s1">'woodruff/down.png'</span><span class="p">,</span>
+        <span class="na">north</span><span class="p">:</span> <span class="s1">'woodruff/north.png'</span><span class="p">,</span>
+        <span class="na">east</span><span class="p">:</span> <span class="s1">'woodruff/east.png'</span><span class="p">,</span>
+        <span class="na">south</span><span class="p">:</span> <span class="s1">'woodruff/south.png'</span><span class="p">,</span>
+        <span class="na">west</span><span class="p">:</span> <span class="s1">'woodruff/west.png'</span>
+            <span class="p">},</span>
+    <span class="na">headingOffset</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+    <span class="na">cartographicDegrees</span><span class="p">:</span> <span class="p">[</span><span class="mf">33.7758</span><span class="p">,</span><span class="mf">84.3947</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Here we specific a set of six images.</p>
+
+<h3 id="set-the-panorama-as-the-reality">Set the panorama as the reality</h3>
+
+<p>We only need one of the above types for any given panorama reality. In either case, we set the panoramaReality to the pano created. So either:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">panoramaReality</span><span class="p">.</span><span class="nx">setPanorama</span><span class="p">(</span><span class="nx">pano1</span><span class="p">);</span></code></pre></figure>
+
+<p>or</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">panoramaReality</span><span class="p">.</span><span class="nx">setPanorama</span><span class="p">(</span><span class="nx">pano2</span><span class="p">);</span></code></pre></figure>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/tutorials/Tutorial3.html">
+        Tutorial 3 - Periodic table
+      </a>
+    </h1>
+
+    <span class="post-date">01 Mar 2016</span>
+
+    <h3 id="before-you-start">Before you start</h3>
+<p>Make sure you have completed <a href="/about">tutorial 1</a></p>
+
+<h3 id="what-you-should-see">What you should see</h3>
+<p>Download <a href="https://itunes.apple.com/us/app/argon3/id944297993?ls=1&amp;mt=8">Argon3</a> and <a href="/argon-tutorials/tutorial5">Try Now</a></p>
+
+<p>Move your camera around until you see green boxes with chemical abbreviations and other information floating in space to the north.
+At the bottom of the screen, you should see four buttons (“table”, “sphere,” “helix,” and “grid”). Tapping on these buttons will change the shape of the periodic table.</p>
+<div class="video">
+    <figure>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/XFt-2UQ64_Q" frameborder="0" allowfullscreen=""></iframe>
+    </figure>
+</div>
+
+<h3 id="introduction">Introduction</h3>
+<p>This example is similar to 4-Directions. It consists of a set of divs arranged in space around the user. It is an Argon3 adaptation of the Periodic table example written for three.js (http://mrdoob.com/lab/javascript/threejs/css3d/periodictable/). The elements are arranged in four different configurations: table (flat in space in front of the user/camera), sphere (around the user), helix (around the user), and grid (around the user). This example also illustrates how to design user interaction into an Argon3 web application by placing buttons on the screen and adding event listeners that respond when the user touches a button.</p>
+
+<h3 id="main-file-indexhtml">Main file (index.html)</h3>
+<p>In the index.html file, we place an explanation of the example in the body tag: this will appear when the user enters Page Mode. In addition, we use the special div with the id = “argon-immersive-context” to arrange a series of buttons for user interaction: these buttons determine which configuration the periodic table will appear in.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"argon-immersive-context"</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"menu"</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"table"</span><span class="o">&gt;</span><span class="nx">TABLE</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"sphere"</span><span class="o">&gt;</span><span class="nx">SPHERE</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"helix"</span><span class="o">&gt;</span><span class="nx">HELIX</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"grid"</span><span class="o">&gt;</span><span class="nx">GRID</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>
+  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">Periodic</span> <span class="nx">table</span> <span class="p">(</span><span class="nx">from</span> <span class="nx">three</span><span class="p">.</span><span class="nx">js</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span> <span class="nx">This</span> <span class="nx">example</span> <span class="nx">adapts</span> <span class="nx">a</span> <span class="nx">three</span><span class="p">.</span><span class="nx">js</span> <span class="nx">example</span> <span class="nx">showing</span> <span class="nx">the</span> <span class="nx">Periodic</span> <span class="nx">elements</span><span class="p">.</span> <span class="nx">In</span> <span class="nx">the</span> <span class="nx">three</span><span class="p">.</span><span class="nx">js</span> <span class="nx">documentation</span><span class="p">,</span> <span class="nx">you</span> <span class="nx">can</span> <span class="nx">find</span> <span class="nx">the</span>  <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">"http://threejs.org/examples/#css3d_periodictable"</span><span class="o">&gt;</span><span class="nx">example</span> <span class="nx">written</span> <span class="k">for</span> <span class="nx">the</span> <span class="nx">screen</span><span class="o">&lt;</span><span class="sr">/a&gt;: The Argon3 version shows the four versions of the periodic table handing in space around the user. This illustrates how *three.js* is used to present and manipulate 3D graphics in Argon3. &lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>
+  <span class="o">&lt;</span><span class="sr">/body&gt;</span></code></pre></figure>
+
+<p>These buttons are styled according to the style commands in style.css. (See that file for details.)</p>
+
+<p>In app.js, we place the javascript code that actually draws the periodic table in various forms depending on which button the user touches.</p>
+
+<h3 id="code-file-appjs">Code file (app.js)</h3>
+<p>We start by defining a data structure that contains the periodic table information (as an array of array elements. This table as an array of arrays: one for each element.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">table</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span> <span class="s2">"H"</span><span class="p">,</span> <span class="s2">"Hydrogen"</span><span class="p">,</span> <span class="s2">"1.00794"</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">],</span>
+  <span class="p">[</span> <span class="s2">"He"</span><span class="p">,</span> <span class="s2">"Helium"</span><span class="p">,</span> <span class="s2">"4.002602"</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">1</span> <span class="p">],</span>
+  <span class="p">[</span> <span class="s2">"Li"</span><span class="p">,</span> <span class="s2">"Lithium"</span><span class="p">,</span> <span class="s2">"6.941"</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">],</span>
+  <span class="err">…</span><span class="k">for</span> <span class="nx">the</span> <span class="nx">complete</span> <span class="nx">array</span> <span class="nx">see</span> <span class="nx">the</span> <span class="nx">source</span> <span class="nx">code</span><span class="err">…</span>
+  <span class="p">[</span> <span class="s2">"Uuo"</span><span class="p">,</span> <span class="s2">"Ununoctium"</span><span class="p">,</span> <span class="s2">"(294)"</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">7</span> <span class="p">]</span>
+  <span class="p">];</span></code></pre></figure>
+
+<p>Next we initialize Argon as in the previous example 4-Directions:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Bootstrap</span><span class="p">.</span><span class="nx">createArgonOptions</span><span class="p">(</span> <span class="nx">Argon</span><span class="p">.</span><span class="nx">immersiveContext</span> <span class="p">);</span>
+  <span class="nx">options</span><span class="p">.</span><span class="nx">renderer</span> <span class="o">=</span> <span class="p">{</span> <span class="na">klass</span><span class="p">:</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">CSS3DRenderer</span> <span class="p">};</span>
+  <span class="kd">var</span> <span class="nx">three</span> <span class="o">=</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Bootstrap</span><span class="p">(</span> <span class="nx">options</span> <span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">eyeOrigin</span> <span class="o">=</span> <span class="nx">three</span><span class="p">.</span><span class="nx">argon</span><span class="p">.</span><span class="nx">objectFromEntity</span><span class="p">(</span><span class="nx">Argon</span><span class="p">.</span><span class="nx">immersiveContext</span><span class="p">.</span><span class="nx">eyeOrigin</span><span class="p">);</span></code></pre></figure>
+
+<h3 id="creating-the-periodic-table-using-threejs">Creating the periodic table using three.js</h3>
+<p>Here we declare and initialize data structures for the four formats of the periodic table. We create a root object at the top of the scene graph in three.js, to which we will add all the table information.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">objects</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="kd">var</span> <span class="nx">targets</span> <span class="o">=</span> <span class="p">{</span> <span class="na">table</span><span class="p">:</span> <span class="p">[],</span> <span class="na">sphere</span><span class="p">:</span> <span class="p">[],</span> <span class="na">helix</span><span class="p">:</span> <span class="p">[],</span> <span class="na">grid</span><span class="p">:</span> <span class="p">[]</span> <span class="p">}</span>
+  <span class="kd">var</span> <span class="nx">root</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Object3D</span><span class="p">()</span></code></pre></figure>
+
+<p>Similar to 4-Directions, we step though the periodic table array and for each element create an enclosing div (the variable element) and append three divs that display information. Make the element div into a CSS object and attach that object to the root in the scene graph. Also add that object to an array of all the element objects.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="k">for</span> <span class="p">(</span> <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">table</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">item</span> <span class="o">=</span> <span class="nx">table</span><span class="p">[</span> <span class="nx">i</span> <span class="p">];</span>
+    <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span> <span class="s1">'div'</span> <span class="p">);</span>
+    <span class="nx">element</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">'element'</span><span class="p">;</span>
+    <span class="nx">element</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'rgba(0,127,127,1)'</span><span class="p">;</span>
+
+    <span class="c1">// if it's Argon make it bright red</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">i</span><span class="o">==</span><span class="mi">17</span><span class="p">)</span> <span class="nx">element</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'rgba(127,0,0,1)'</span><span class="p">;</span>
+
+      <span class="kd">var</span> <span class="nx">number</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span> <span class="s1">'div'</span> <span class="p">);</span>
+      <span class="nx">number</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">'number'</span><span class="p">;</span>
+      <span class="nx">number</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="nx">element</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span> <span class="nx">number</span> <span class="p">);</span>
+
+      <span class="kd">var</span> <span class="nx">symbol</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span> <span class="s1">'div'</span> <span class="p">);</span>
+      <span class="nx">symbol</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">'symbol'</span><span class="p">;</span>
+      <span class="nx">symbol</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">item</span><span class="p">[</span> <span class="mi">0</span> <span class="p">];</span>
+      <span class="nx">element</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span> <span class="nx">symbol</span> <span class="p">);</span>
+
+      <span class="kd">var</span> <span class="nx">details</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span> <span class="s1">'div'</span> <span class="p">);</span>
+      <span class="nx">details</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">'details'</span><span class="p">;</span>
+      <span class="nx">details</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">item</span><span class="p">[</span> <span class="mi">1</span> <span class="p">]</span> <span class="o">+</span> <span class="s1">'&lt;br&gt;'</span> <span class="o">+</span> <span class="nx">item</span><span class="p">[</span> <span class="mi">2</span> <span class="p">];</span>
+      <span class="nx">element</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span> <span class="nx">details</span> <span class="p">);</span>
+
+      <span class="c1">// make a css 3d object for this element</span>
+      <span class="kd">var</span> <span class="nx">object</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">CSS3DObject</span><span class="p">(</span> <span class="nx">element</span> <span class="p">);</span>
+      <span class="nx">object</span><span class="p">.</span><span class="nx">matrixAutoUpdate</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="nx">objects</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span> <span class="nx">object</span> <span class="p">);</span>
+
+      <span class="c1">// Add the object to the root node of the scene graph</span>
+      <span class="nx">root</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">object</span><span class="p">);</span>
+      <span class="p">}</span></code></pre></figure>
+
+<p>Now that we have built up the whole table of elements, add the root to the eyeOrigin, which we created on initialization. This connects our three.js objects to the Argon positioning system, based on Cesium entities (as explained in 0-Background)</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">eyeOrigin</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">root</span><span class="p">);</span></code></pre></figure>
+
+<p>There are four configurations: table, sphere, helix, and grid. Each element has to be positioned in space relative to the other elements in that configuration and oriented toward the camera. We step through the table again, creating a target object with the right x, y, z coordinates.</p>
+
+<h3 id="the-basic-table-configuration">The basic table configuration</h3>
+
+<p>The table will appear as a wall of rectangular signs (divs) in front of the user:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="k">for</span> <span class="p">(</span> <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">objects</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">item</span> <span class="o">=</span> <span class="nx">table</span><span class="p">[</span> <span class="nx">i</span> <span class="p">];</span>
+  <span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Object3D</span><span class="p">();</span>
+  <span class="nx">target</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="p">(</span> <span class="nx">item</span><span class="p">[</span> <span class="mi">3</span> <span class="p">]</span> <span class="o">*</span> <span class="mi">140</span> <span class="p">)</span> <span class="o">-</span> <span class="mi">1330</span><span class="p">;</span>
+  <span class="nx">target</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="o">-</span> <span class="p">(</span> <span class="nx">item</span><span class="p">[</span> <span class="mi">4</span> <span class="p">]</span> <span class="o">*</span> <span class="mi">180</span> <span class="p">)</span> <span class="o">+</span> <span class="mi">990</span><span class="p">;</span>
+  <span class="nx">target</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="o">-</span> <span class="mi">1000</span><span class="p">;</span>
+
+<span class="c1">//Push this target into the target array for the table configuration</span>
+  <span class="nx">targets</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span> <span class="nx">target</span> <span class="p">);</span>
+<span class="p">};</span></code></pre></figure>
+
+<h3 id="the-sphere-configuration">The sphere configuration</h3>
+
+<p>In this configuration the signs divs for the elements surround the user (camera) at the center of the sphere.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">vector</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+  <span class="k">for</span> <span class="p">(</span> <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">objects</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+
+      <span class="kd">var</span> <span class="nx">phi</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">acos</span><span class="p">(</span> <span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span> <span class="mi">2</span> <span class="o">*</span> <span class="nx">i</span> <span class="p">)</span> <span class="o">/</span> <span class="nx">objects</span><span class="p">.</span><span class="nx">length</span> <span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">theta</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span> <span class="nx">objects</span><span class="p">.</span><span class="nx">length</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="p">)</span> <span class="o">*</span> <span class="nx">phi</span><span class="p">;</span>
+      <span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Object3D</span><span class="p">();</span>
+
+      <span class="nx">target</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">800</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">cos</span><span class="p">(</span> <span class="nx">theta</span> <span class="p">)</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sin</span><span class="p">(</span> <span class="nx">phi</span> <span class="p">);</span>
+      <span class="nx">target</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">800</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sin</span><span class="p">(</span> <span class="nx">theta</span> <span class="p">)</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sin</span><span class="p">(</span> <span class="nx">phi</span> <span class="p">);</span>
+      <span class="nx">target</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mi">800</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">cos</span><span class="p">(</span> <span class="nx">phi</span> <span class="p">);</span>
+
+      <span class="nx">Orient</span> <span class="nx">the</span> <span class="nx">target</span> <span class="nx">div</span> <span class="nx">to</span> <span class="nx">face</span> <span class="nx">the</span> <span class="nx">user</span><span class="o">/</span><span class="nx">camera</span>
+      <span class="nx">target</span><span class="p">.</span><span class="nx">lookAt</span><span class="p">(</span> <span class="nx">vector</span> <span class="p">);</span>
+
+      <span class="nx">Push</span> <span class="nx">target</span> <span class="nx">into</span> <span class="nx">the</span> <span class="nx">target</span> <span class="nx">array</span> <span class="k">for</span> <span class="nx">the</span> <span class="nx">sphere</span> <span class="nx">configuration</span>
+      <span class="nx">targets</span><span class="p">.</span><span class="nx">sphere</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span> <span class="nx">target</span> <span class="p">);</span>
+    <span class="p">}</span></code></pre></figure>
+
+<h4 id="the-helix-configuration">The helix configuration</h4>
+<p>In this configuration the element divs wrap themselves around the user/camera to form a helix:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">vector</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span> <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">objects</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">phi</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">*</span> <span class="mf">0.175</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">;</span>
+    <span class="nx">target</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Object3D</span><span class="p">();</span>
+    <span class="nx">target</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">900</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sin</span><span class="p">(</span> <span class="o">-</span><span class="nx">phi</span> <span class="p">);</span>
+    <span class="nx">target</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="o">-</span> <span class="p">(</span> <span class="nx">i</span> <span class="o">*</span> <span class="mi">8</span> <span class="p">)</span> <span class="o">+</span> <span class="mi">450</span><span class="p">;</span>
+    <span class="nx">target</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="mi">900</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">cos</span><span class="p">(</span> <span class="o">-</span><span class="nx">phi</span> <span class="p">);</span>
+    <span class="nx">vector</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="o">-</span><span class="nx">target</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="nx">vector</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="o">-</span><span class="nx">target</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+    <span class="nx">vector</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="o">-</span><span class="nx">target</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="nx">target</span><span class="p">.</span><span class="nx">lookAt</span><span class="p">(</span> <span class="nx">vector</span> <span class="p">);</span>
+    <span class="nx">targets</span><span class="p">.</span><span class="nx">helix</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span> <span class="nx">target</span> <span class="p">);</span>
+  <span class="p">}</span>
+  </code></pre></figure>
+
+<h3 id="the-grid-configuration">The grid configuration</h3>
+<p>In this configuration, the element divs appear at various depths in the space around the user.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="k">for</span> <span class="p">(</span> <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">objects</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+
+    <span class="nx">target</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Object3D</span><span class="p">();</span>
+    <span class="nx">target</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span> <span class="nx">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="p">)</span> <span class="o">*</span> <span class="mi">400</span> <span class="p">)</span> <span class="o">-</span> <span class="mi">800</span><span class="p">;</span>
+    <span class="nx">target</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="p">(</span> <span class="o">-</span> <span class="p">(</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span> <span class="nx">i</span> <span class="o">/</span> <span class="mi">5</span> <span class="p">)</span> <span class="o">%</span> <span class="mi">5</span> <span class="p">)</span> <span class="o">*</span> <span class="mi">400</span> <span class="p">)</span> <span class="o">+</span> <span class="mi">800</span><span class="p">;</span>
+    <span class="nx">target</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="p">(</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span> <span class="nx">i</span> <span class="o">/</span> <span class="mi">25</span> <span class="p">)</span> <span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">-</span> <span class="mi">2500</span><span class="p">;</span>
+    <span class="nx">targets</span><span class="p">.</span><span class="nx">grid</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span> <span class="nx">target</span> <span class="p">);</span>
+
+  <span class="p">}</span></code></pre></figure>
+
+<h3 id="setting-the-buttons-on-the-screen-to-switch-between-the-above-configurations-table-sphere-helix-grid">Setting the buttons on the screen to switch between the above configurations (table, sphere, helix, grid)</h3>
+
+<p>The buttons (table, sphere, helix, grid) were defined in the body tag in index.html. Here we attach an event listener to each of the buttons in the button bar (in the div in the body). Each button calls the transform function with the appropriate target array: targets.table, targets.sphere, targets.helix, or targets.grid.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span> <span class="s1">'table'</span> <span class="p">);</span>
+    <span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span> <span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span> <span class="nx">event</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">transform</span><span class="p">(</span> <span class="nx">targets</span><span class="p">.</span><span class="nx">table</span><span class="p">,</span> <span class="mi">2000</span> <span class="p">);</span>
+    <span class="p">},</span> <span class="kc">false</span> <span class="p">);</span>
+
+    <span class="kd">var</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span> <span class="s1">'sphere'</span> <span class="p">);</span>
+    <span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span> <span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span> <span class="nx">event</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">transform</span><span class="p">(</span> <span class="nx">targets</span><span class="p">.</span><span class="nx">sphere</span><span class="p">,</span> <span class="mi">2000</span> <span class="p">);</span>
+    <span class="p">},</span> <span class="kc">false</span> <span class="p">);</span>
+
+    <span class="kd">var</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span> <span class="s1">'helix'</span> <span class="p">);</span>
+    <span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span> <span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span> <span class="nx">event</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">transform</span><span class="p">(</span> <span class="nx">targets</span><span class="p">.</span><span class="nx">helix</span><span class="p">,</span> <span class="mi">2000</span> <span class="p">);</span>
+    <span class="p">},</span> <span class="kc">false</span> <span class="p">);</span>
+
+    <span class="kd">var</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span> <span class="s1">'grid'</span> <span class="p">);</span>
+    <span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span> <span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span> <span class="nx">event</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">transform</span><span class="p">(</span> <span class="nx">targets</span><span class="p">.</span><span class="nx">grid</span><span class="p">,</span> <span class="mi">2000</span> <span class="p">);</span>
+    <span class="p">},</span> <span class="kc">false</span> <span class="p">);</span></code></pre></figure>
+
+<h3 id="the-transform-function-to-switch-the-configuration">The transform function to switch the configuration</h3>
+
+<p>The transform function puts a copy of the position and orientation information for the target configuration into the object (the periodic table element as drawn on the scene). It then calls updateMatrix() on the object to get it redrawn. Each redrawn object will be in the new configuration.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">transform</span><span class="p">(</span> <span class="nx">targets</span><span class="p">,</span> <span class="nx">duration</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span> <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">objects</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">object</span> <span class="o">=</span> <span class="nx">objects</span><span class="p">[</span> <span class="nx">i</span> <span class="p">];</span>
+    <span class="nx">target</span> <span class="o">=</span> <span class="nx">targets</span><span class="p">[</span> <span class="nx">i</span> <span class="p">];</span>
+    <span class="nx">object</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">copy</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">position</span><span class="p">)</span>
+    <span class="nx">object</span><span class="p">.</span><span class="nx">rotation</span><span class="p">.</span><span class="nx">copy</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">rotation</span><span class="p">)</span>
+    <span class="nx">object</span><span class="p">.</span><span class="nx">updateMatrix</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Finally the script calls the transform for the first time, drawing the table configuration:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">transform</span><span class="p">(</span> <span class="nx">targets</span><span class="p">.</span><span class="nx">table</span><span class="p">,</span> <span class="mi">0</span> <span class="p">);</span></code></pre></figure>
+
+<h3 id="modify-this-code">Modify this code</h3>
+<p>In this example the target values are copied, which creates an instantaneous transformation from table to sphere etc. As an exercise, you could try to modify this code to make the values tween smoothly to the next configuration. The transform function above has a value as the duration parameter. You could implement code to set that value to something other than 0 to indicate how fast the tweening would take place.</p>
+
+  </div>
+  
+</div>
+
+<div class="pagination">
+  
+    <a class="pagination-item older" href="/page2">Older</a>
+  
+  
+    <span class="pagination-item newer">Newer</span>
+  
+</div>
+      </div>
+    </div>
+
+  </body>
+</html>

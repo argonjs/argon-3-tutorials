@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Tutorial 5 - Geolocation &middot; Argonjs
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>This site contains a collection of tutorials for web developers using <a href="http://argonjs.io" target="_blank">argon.js</a> to add AR content to a web application.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <li class="sidebar-nav-item"><a href="/tutorials/WelcomePage">Home</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Overview">Overview</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial1">Tutorial 1</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial2">Tutorial 2</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial3">Tutorial 3</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial4">Tutorial 4</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial5">Tutorial 5</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial6">Tutorial 6</a></li>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about">About</a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+
+    <a class="sidebar-nav-item" href="/argon-tutorials.zip">Download</a>
+    <a class="sidebar-nav-item" href="https://github.com/argonjs/argon.js">GitHub project</a>
+    <span class="sidebar-nav-item">Currently v1.0.0</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2016. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Argonjs</a>
+            <small>Tutorials</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Tutorial 5 - Geolocation</h1>
+  <span class="post-date">01 Mar 2016</span>
+  <h3 id="before-you-start">Before you start</h3>
+<p>Make sure you have completed <a href="/about">tutorial 1</a></p>
+
+<h3 id="what-you-should-see">What you should see</h3>
+<p>Download <a href="https://itunes.apple.com/us/app/argon3/id944297993?ls=1&amp;mt=8">Argon3</a> and <a href="/argon-tutorials/tutorial2">Try Now</a></p>
+
+<p>If you are on the Georgia Tech campus, move your camera around until you see a floating Buzz box.
+Regardless of location, you should see a floating wooden box.</p>
+<div class="video">
+    <figure>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/jPHe-ut4VzY" frameborder="0" allowfullscreen=""></iframe>
+    </figure>
+</div>
+
+<h3 id="introduction">Introduction</h3>
+<p>The Argon3 browser allows the developer to place 3D content in the world for display to the user and interaction with the user. The content can be located 1. relative to the device itself or 2. relative to the earth or the celestial frame. argon.js uses Cesium (http://cesiumjs.org) to establish a precise geolocation for a local point of origin on the earth and then uses that origin for its local frame of reference to locate the camera and any 3D objects the application creates. (See the Background for a fuller explanation of how argon.js uses Cesium.)</p>
+
+<p>This example illustrates both ways of locating content: 1. It finds the current location of the viewer and positions a cube at a well-known nearby location (the Georgia Tech campus, for us). This cube is covered with a texture of Buzz, the Georgia Tech mascot.  2. It creates a second cube a small distance away from where the user was positioned when the example was loaded.  It does this by adding a small amount to the user’s current east-west location, in the local taronhree.js cartesian coordinates.  This illustrates how to create geospatial content based on the current location and update the internal geospatial location of the object</p>
+
+<h3 id="main-file-indexhtml">Main file (index.html)</h3>
+<p>In the index.html, the body tag is in two parts.  The “argon-immersive-context” div is used to create a small dynamic information box at the bottom of the screen that will track the user’s location and the position of the two objects.  Text outside this special div is rendered only when the user enters “Page Mode” by touching the icon in the top right corner of the interface. In this case,  the text in Page Mode offers an explanation of the example that appears on the screen over the background context.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"argon-immersive-context"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"menu"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">button</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"location"</span><span class="o">&gt;</span><span class="nx">lon</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="nx">lat</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div&gt; </span><span class="err"> 
+</span>  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">A</span> <span class="nx">Simple</span> <span class="nx">Geolocation</span> <span class="nx">example</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">This</span> <span class="nx">example</span> <span class="nx">takes</span> <span class="nx">the</span> <span class="nx">current</span> <span class="nx">location</span> <span class="nx">of</span> <span class="nx">the</span> <span class="nx">viewer</span><span class="p">,</span> <span class="nx">and</span> <span class="nx">positions</span> <span class="nx">a</span> <span class="nx">cube</span> <span class="nx">at</span> <span class="nx">a</span> <span class="nx">well</span><span class="o">-</span><span class="nx">known</span> <span class="nx">nearby</span> <span class="nx">location</span> <span class="p">(</span><span class="nx">the</span> <span class="nx">Georgia</span> <span class="nx">Tech</span> <span class="nx">campus</span><span class="p">,</span> <span class="k">for</span> <span class="nx">us</span><span class="p">),</span> <span class="nx">and</span> <span class="nx">creates</span> <span class="nx">a</span> <span class="nx">second</span> <span class="nx">cube</span> <span class="nx">a</span> <span class="nx">small</span> <span class="nx">distance</span> <span class="nx">away</span> <span class="nx">from</span> <span class="nx">where</span> <span class="nx">the</span> <span class="nx">viewer</span> <span class="nx">was</span> <span class="nx">positioned</span> <span class="nx">when</span> <span class="nx">the</span> <span class="nx">example</span> <span class="nx">was</span> <span class="nx">loaded</span><span class="p">.</span>  <span class="nx">We</span> <span class="k">do</span> <span class="k">this</span> <span class="nx">by</span> <span class="nx">adding</span> <span class="nx">a</span> <span class="nx">small</span> <span class="nx">amount</span> <span class="nx">to</span> <span class="nx">our</span> <span class="nx">current</span> <span class="nx">east</span><span class="o">-</span><span class="nx">west</span> <span class="nx">location</span><span class="p">,</span> <span class="k">in</span> <span class="nx">the</span> <span class="nx">local</span> <span class="nx">Three</span><span class="p">.</span><span class="nx">js</span> <span class="nx">cartesian</span> <span class="nx">coordinates</span><span class="p">.</span>  <span class="nx">This</span> <span class="nx">illustrates</span> <span class="nx">how</span> <span class="nx">to</span> <span class="nx">create</span> <span class="nx">geospatial</span> <span class="nx">content</span> <span class="nx">based</span> <span class="nx">on</span> <span class="nx">the</span> <span class="nx">current</span> <span class="nx">location</span><span class="p">,</span> <span class="nx">and</span> <span class="nx">update</span> <span class="nx">the</span> <span class="nx">internal</span> <span class="nx">geospatial</span> <span class="nx">location</span> <span class="nx">of</span> <span class="nx">the</span> <span class="nx">object</span><span class="p">.</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/body&gt;</span></code></pre></figure>
+
+<h3 id="code-file-appjs">Code file (app.js)</h3>
+<p>To begin we define the immersive Context to be a panorama (instead of the device’s camera, which is the default).</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js">  <span class="kd">var</span> <span class="nx">panoramaReality</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Argon</span><span class="p">.</span><span class="nx">Reality</span><span class="p">.</span><span class="nx">Panorama</span><span class="p">;</span>
+  <span class="nx">Argon</span><span class="p">.</span><span class="nx">immersiveContext</span><span class="p">.</span><span class="nx">setRequiredReality</span><span class="p">(</span><span class="nx">panoramaReality</span><span class="p">);</span></code></pre></figure>
+
+<p>Now we create the panorama itself.</p>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/tutorials/WelcomePage.html">
+            Welcome
+            <small>01 Mar 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/tutorials/Tutorial6.html">
+            Tutorial 6 - Using Argon.js with Vuforia
+            <small>01 Mar 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/tutorials/Tutorial4.html">
+            Tutorial 4 - Panorama Reality
+            <small>01 Mar 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+  </body>
+</html>
