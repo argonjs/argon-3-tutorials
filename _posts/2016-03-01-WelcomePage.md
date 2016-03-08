@@ -5,14 +5,14 @@ title: Welcome
 
 This site contains a collection of tutorials for web developers using argon.js to add AR content to a web application. On this page, we provide an overview of the design of argon.js, introducing the terminology and concepts used by the framework. In the tutorials, we will go through a sequence of examples that show how to leverage the various features of argon.js in a web application.
 
-* [Tutorial 1 - Getting Started](/tutorials/Tutorial1)
-* [Tutorial 2 - Compass](/tutorials/Tutorial2)
-* [Tutorial 3 - Periodic table](/tutorials/Tutorial3)
-* [Tutorial 4 - Panorama Reality](/tutorials/utorial4)
-* [Tutorial 5 - Geolocation](/tutorials/Tutorial5)
-* [Tutorial 6 - Using Argon.js with Vuforia](/tutorials/Tutorial6)
+* [Tutorial 1 - Getting Started](tutorials/Tutorial1)
+* [Tutorial 2 - Compass](tutorials/Tutorial2)
+* [Tutorial 3 - Periodic table](tutorials/Tutorial3)
+* [Tutorial 4 - Panorama Reality](tutorials/utorial4)
+* [Tutorial 5 - Geolocation](tutorials/Tutorial5)
+* [Tutorial 6 - Using Argon.js with Vuforia](tutorials/Tutorial6)
 
-* For more information about Argon3, please visit [overview](/tutorials/Overview).
+* For more information about Argon3, please visit [overview](tutorials/Overview).
 
 * Download open-source Argon.js framework from Argonjs [Github repository](https://github.com/argonjs/argon.js) and <a href="{{ site.baseurl }}/argon-tutorials.zip">Download</a> tutorials source files from this site
 
