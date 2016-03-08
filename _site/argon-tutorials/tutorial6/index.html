@@ -1,0 +1,19 @@
+<!doctype html><meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  
+  <title>Panorama</title>
+  
+  <script src="../../vendor/three.js"></script>
+  <script src="../../vendor/threestrap.js"></script>
+  <script src="../../argon.js"></script>
+  <script src="../../argon-three.js"></script>
+  
+ <body style="background-color:rgba(255,255,255,0.7)">
+   <h2>Panorama as reality (background)</h2>
+    <p>This example illustrate the use of a panorama as an Argon reality. The panorama appears in the background instead of the video from the camera. The panorama can be in one of two forms: it can be a single equirectangular png or jpg, 2. it can six square png or jpg panels making up a "skybox. Both types are defined in the code, but the skybox is the one that is actually displayed.This line of code sets the panorama: <br><br> panoramaReality.setPanorama(woodruffPano)<br>
+   <br>In this case the panoarama is set to woodruffPano, which is skybox type. You can alter the code to use the other type by changing the line to:<br>
+    <br>panoramaReality.setPanorama(pano)
+    </P>
+
+  <script src="./app.js"></script>
+</html>

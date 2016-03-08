@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Tutorial 1 - GETTING STARTED &middot; Argonjs
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>This site contains a collection of tutorials for web developers using <a href="http://argonjs.io" target="_blank">argon.js</a> to add AR content to a web application.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <li class="sidebar-nav-item"><a href="/tutorials/WelcomePage">Home</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Overview">Overview</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial1">Tutorial 1</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial2">Tutorial 2</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial3">Tutorial 3</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial4">Tutorial 4</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial5">Tutorial 5</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial6">Tutorial 6</a></li>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about">About</a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+
+    <a class="sidebar-nav-item" href="/argon-tutorials.zip">Download</a>
+    <a class="sidebar-nav-item" href="https://github.com/argonjs/argon.js">GitHub project</a>
+    <span class="sidebar-nav-item">Currently v1.0.0</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2016. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Argonjs</a>
+            <small>Tutorials</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Tutorial 1 - GETTING STARTED</h1>
+  <span class="post-date">01 Mar 2016</span>
+  <h3 id="welcome">Welcome</h3>
+<p><strong>Quick Demo:</strong>
+Download <a href="https://itunes.apple.com/us/app/argon3/id944297993?ls=1&amp;mt=8">Argon3</a> and <a href="/argon-tutorials/tutorial1">Try Now</a></p>
+
+<h3 id="setting-up">Setting up</h3>
+
+<p>Step 1: Go to Argonjs <a href="https://github.com/argonjs/argon.js">Github repository</a>.</p>
+
+<p>Step 2: Click the “download ZIP” button to the right of the Github page.</p>
+
+<p>Step 3: Unzip these files and move them onto a personal server.</p>
+
+<p>Step 4: Install <a href="https://itunes.apple.com/us/app/argon3/id944297993?ls=1&amp;mt=8">Argon3</a>  from the App Store onto an iOS device.</p>
+
+<p>Step 5: Access your server from the Argon3 mobile browser and open the folder containing your newly unzipped files. The path is: <em>argon.js/dist/examples/tutotial1</em>. or <a href="/argon-tutorials.zip">Download</a> tutorials source files from this site.</p>
+
+<p>Step 6: You should see an icon on the corner of your screen. This means you have completed the tutorial!</p>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>An argon.js web application is created like any other web application; a server responds to http protocol requests and delivers an HTML5 web application to the browser. In these examples, we will use static HTML and Javascript files, but any dynamic web application server could be used. The files will include argon.js (as well other javascript libraries such as three.js, a 3D framework). The main or launch file (e.g. index.html) has the following structure:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&lt;!</span><span class="nx">doctype</span> <span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"viewport"</span> <span class="nx">content</span><span class="o">=</span><span class="s2">"width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"</span><span class="o">&gt;</span>
+
+<span class="c">&lt;!--</span><span class="nx">three</span><span class="p">.</span><span class="nx">js</span><span class="p">,</span> <span class="nx">a</span> <span class="mi">3</span><span class="nx">D</span> <span class="nx">Scene</span> <span class="nx">graph</span> <span class="k">for</span> <span class="nx">the</span> <span class="nx">web</span><span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"../../js/three.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>
+<span class="c">&lt;!--</span><span class="nx">threestrap</span><span class="p">.</span><span class="nx">js</span> <span class="nx">is</span> <span class="nx">a</span> <span class="nx">bootstrapping</span> <span class="nx">library</span> <span class="nx">that</span> <span class="nx">makes</span> <span class="nx">three</span><span class="p">.</span><span class="nx">js</span> <span class="nx">easier</span> <span class="nx">to</span> <span class="nx">work</span> <span class="kd">with</span><span class="p">.</span>  <span class="nx">Argon</span><span class="o">-</span><span class="nx">three</span><span class="p">.</span><span class="nx">js</span> <span class="nx">requires</span> <span class="nx">it</span><span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"../../js/threestrap.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>
+<span class="c">&lt;!--</span><span class="nx">The</span> <span class="nx">argon</span> <span class="nx">library</span> <span class="nx">support</span> <span class="k">for</span> <span class="nx">integration</span> <span class="nx">of</span> <span class="nx">three</span><span class="p">.</span><span class="nx">js</span> <span class="nx">and</span> <span class="nx">argon</span><span class="p">.</span><span class="nx">js</span><span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"../../build/argon.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"../../build/argon-three.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>
+<span class="c">&lt;!--</span> <span class="nx">One</span> <span class="nx">or</span> <span class="nx">more</span> <span class="nx">style</span> <span class="nx">sheets</span> <span class="k">for</span> <span class="nx">styling</span> <span class="nx">the</span> <span class="nx">elements</span> <span class="k">in</span> <span class="nx">the</span> <span class="nx">body</span> <span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">link</span> <span class="nx">rel</span><span class="o">=</span><span class="s2">"stylesheet"</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/css"</span> <span class="nx">href</span><span class="o">=</span><span class="s2">"style.css"</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"argon-immersive-context"</span><span class="o">&gt;</span>
+         <span class="c">&lt;!--</span><span class="nx">any</span> <span class="nx">html</span> <span class="k">for</span> <span class="kr">interface</span> <span class="nx">elements</span> <span class="nx">etc</span><span class="p">.</span> <span class="nx">that</span> <span class="nx">will</span> <span class="nx">appear</span> <span class="nx">on</span> <span class="nx">the</span> <span class="nx">screen</span> <span class="k">in</span> <span class="nx">AR</span> <span class="nx">mode</span><span class="o">--&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="c">&lt;!--</span><span class="nx">one</span> <span class="nx">or</span> <span class="nx">more</span> <span class="nx">divs</span> <span class="nx">that</span> <span class="nx">you</span> <span class="nx">want</span> <span class="nx">to</span> <span class="nx">appear</span> <span class="k">in</span> <span class="s2">"page mode"</span> <span class="nx">described</span> <span class="nx">below</span><span class="o">--&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span>
+<span class="c">&lt;!--</span><span class="nx">application</span> <span class="nx">javascript</span> <span class="nx">code</span><span class="o">--&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"../app.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="sr">/html&gt;</span></code></pre></figure>
+
+<p>In these examples, we follow a coding style that does not include any inline Javascript, but rather puts the main application code in an external javascript file included at the bottom of the page, after the body.</p>
+
+<h3 id="the-html-page-indexhtml">The html page (index.html)</h3>
+
+<p>In addition to offering AR features (such as geolocation, video of the surrounding word, 3D graphics and image tracking), the Argon3 browser is a standard web browser (e.g., on iOS, it uses Apple’s web renderer) and can therefore render any web content available on the platform. You can take advantage of these capabilities in three ways.</p>
+
+<ul>
+  <li>
+    <p>First, argon uses (or creates) a special div with the id argon-immersive-context. Anything you put in this div (or in divs nested inside this one) will be rendered on the screen in 2D, in front of the 3D AR context (argon-three.js creates a CSS 3D perspective div and/or WebGL canvas behind any other content in this div, into which the 3D AR content is rendered). You can use this feature to create interface elements such as display boxes or button to provide information and interactivity for your application. You can see examples of this special argon div in <a href="/2016/03/01/Tutorial5">tutorials 5 (Geolocation)</a> and <a href="/2016/03/01/Tutorial3">3 (Periodic)</a>.</p>
+  </li>
+  <li>
+    <p>Second, you can put any additional divs into the body that you wish. These will be visible when the user puts the Argon3 browser into “Page Mode” by touching the toggle button in the upper right hand corner of the interface. Argon3 will enable the “Page Mode” button when it sees non-AR content in the &lt;body&gt;&lt;/body&gt; of the document. Initially, this non-AR content is hidden. When the user activates Page Mode, the 3D content in that channel disappears (i.e., the content argon-three.js inserted into the argon-immersive-context), and the user sees the other HTML of the page (which is normally hidden). You can use this feature to add instructions, text, images, or any other multimedia content to your argon.js experience. For example, in tutorials 2-6, we add text that explains the purpose of the example.</p>
+  </li>
+  <li>
+    <p>Third, because Webkit is a full-featured HTML5 engine (used by Safari), Argon can render most web pages (e.g., including those without any AR features). Just type the url into the text box.</p>
+  </li>
+</ul>
+
+<h3 id="the-application-code-appjs">The application code (app.js)</h3>
+<p>In these tutorials, we place the application javascript in a separate file (you can create your web applications as you see fit, placing all content wherever you prefer, as with any web application). Segregating the javascript code into a file separate from index.html file allows for a cleaner workflow as well as the use of a wide variety of Javascript development tools to transcode, minify or otherwise manipulate your code. We name the file app.js in each of the tutorials.</p>
+
+<p>Inside app.js, in order to initialize Argon, scripts typically begin with:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Bootstrap</span><span class="p">.</span><span class="nx">createArgonOptions</span><span class="p">(</span> <span class="nx">Argon</span><span class="p">.</span><span class="nx">immersiveContext</span> <span class="p">)</span>
+<span class="nx">options</span><span class="p">.</span><span class="nx">renderer</span> <span class="o">=</span> <span class="p">{</span> <span class="na">klass</span><span class="p">:</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">CSS3DRenderer</span> <span class="p">}</span>
+<span class="kd">var</span> <span class="nx">three</span> <span class="o">=</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Bootstrap</span><span class="p">(</span> <span class="nx">options</span> <span class="p">)</span></code></pre></figure>
+
+<ul>
+  <li>
+    <p>Line 1 requests the default immersiveContext (the view from the device’s camera) as the surrounding visual environment that will be shown. (argon.js will eventually support having other Contexts in addition to the default immersiveContext, such as having embedded AR contexts in Page Mode. )</p>
+  </li>
+  <li>
+    <p>Line 2 indicates which renderer this web application will use. The three.js CSS renderer is used here. Alternatives include the WebGL renderer (options.renderer = { klass: THREE.WebGLRenderer }) or a combined WebGL/CSS3 renderer (options.renderer = {klass: THREE.MultiRenderer })</p>
+  </li>
+  <li>
+    <p>Line 3 uses threestrap to create a three.js scene graph along with the chosen renderer and store it as the variable three.</p>
+  </li>
+</ul>
+
+<p>Together these three lines initialize the argon.js framework to use the device’s camera to display the world as an immersive background and create a scene graph to which the channel can attach 3D content.  You then add the javascript code that creates and manipulates that content. For a first example of how this works, continue to <a href="/2016/03/01/Tutorial5">Tutorials 5 (Geolocation)</a></p>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/tutorials/WelcomePage.html">
+            Welcome
+            <small>01 Mar 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/tutorials/Tutorial6.html">
+            Tutorial 6 - Using Argon.js with Vuforia
+            <small>01 Mar 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/tutorials/Tutorial5.html">
+            Tutorial 5 - Geolocation
+            <small>01 Mar 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+  </body>
+</html>

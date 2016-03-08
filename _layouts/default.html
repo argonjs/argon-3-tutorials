@@ -1,31 +1,30 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <title>{{ page.title }}</title>
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/syntax.css">
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css">
-</head>
-<body>
-  <header>
-    <div id="argon-banner"><a href="http://argonjs.io">
-      <img src="{{ site.baseurl }}/images/ArgonIcon50x50.png" width="50" height="50" alt="Argon.js logo" /></a>
-      <h1>Argon.js</h1>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  {% include head.html %}
+
+  <body class="theme-base-09">
+
+    {% include sidebar.html %}
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+          <h3 class="masthead-title">
+            <a href="/" title="Home">{{ site.title }}</a>
+            <small>{{ site.tagline }}</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        {{ content }}
+      </div>
     </div>
-    <ul id="nav">
-      <li class="active">
-        <a href="{{ site.baseurl }}/index.html">Overview</a>
-      </li>
-      <li class="active">
-        <a href="{{ site.baseurl }}/tutorials.html">Tutorials</a>
-      </li>
-      <li class="active">
-        <a href="{{ site.baseurl }}/demos.html">Demos</a>
-      </li>
-    </ul>
-  </header>
-  <div id="content-wrapper">
-    {{ content }}
-  </div>
-</body>
+
+  </body>
 </html>

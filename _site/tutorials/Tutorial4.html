@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Tutorial 4 - Panorama Reality &middot; Argonjs
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-09">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>This site contains a collection of tutorials for web developers using <a href="http://argonjs.io" target="_blank">argon.js</a> to add AR content to a web application.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <li class="sidebar-nav-item"><a href="/tutorials/WelcomePage">Home</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Overview">Overview</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial1">Tutorial 1</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial2">Tutorial 2</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial3">Tutorial 3</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial4">Tutorial 4</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial5">Tutorial 5</a></li>
+    <li class="sidebar-nav-item"><a href="/tutorials/Tutorial6">Tutorial 6</a></li>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about">About</a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+
+    <a class="sidebar-nav-item" href="/argon-tutorials.zip">Download</a>
+    <a class="sidebar-nav-item" href="https://github.com/argonjs/argon.js">GitHub project</a>
+    <span class="sidebar-nav-item">Currently v1.0.0</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2016. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Argonjs</a>
+            <small>Tutorials</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Tutorial 4 - Panorama Reality</h1>
+  <span class="post-date">01 Mar 2016</span>
+  <h3 id="before-you-start">Before you start</h3>
+<p>Make sure you have completed <a href="/about">tutorial 1</a></p>
+
+<h3 id="what-you-should-see">What you should see</h3>
+<p>As you move your camera around, you should see a panoramic, 360-degree view of Atlanta’s midtown.</p>
+<div class="video">
+    <figure>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/9CzeORBjOXk" frameborder="0" allowfullscreen=""></iframe>
+    </figure>
+</div>
+
+<h3 id="introduction">Introduction</h3>
+<p>In Geolocation, Vuforia, Compass, Periodic Table tutorials, we have used the default reality (the device’s camera to show the world around the user). As noted in the Overview, Argon3 can display other realities (other backgrounds). Currently there is one other reality that has been defined and is available for use: <a href="https://en.wikipedia.org/wiki/Panorama">static panoramic images</a>.</p>
+
+<p>A panoramic image provides a 360-degree view around the user from one specific geolocation. argon.js accepts imagery in two forms:</p>
+
+<ol>
+  <li>a single equirectangular projection jpg or png</li>
+  <li>a “skybox” consisting of 6 image panels.
+We will see the code below for creating each kind.</li>
+</ol>
+
+<h3 id="useful-hints--size-limitation">Useful hints / Size Limitation</h3>
+<p>The equirectangular version of the Argon panorama is mapped as a single texture onto the inside of a sphere using WebGL. The texture size is limited, and the limits may be different on different devices.</p>
+
+<p>At present, a texture of <em>4000 x 2000</em> seems to be a safe limit. (The aspect ratio should always be 2x1) You can achieve greater resolution using the skype box, because each of the 6 panels is a single texture mapped onto one surface of a cube. Each texture is approximately 4000 x 4000.</p>
+
+<h3 id="generating-panoramas">Generating Panoramas</h3>
+<p>Panoramas can be created using a tripod, a “panohead”, and a conventional camera— by taking a series of overlapping images and then stitching them together using software such as <a href="https://www.ptgui.com">PTGui</a>. PTGui (or similar software) will then generate an equirectangular image or the skybox panels that can be used in Argon. You can also generate “quick-and-dirty” panoramas using apps that exploit the smartphone camera directly, such as Microsoft’s Photosynth.</p>
+
+<h3 id="main-file-indexhtml">Main file (index.html)</h3>
+<p>In the html file, we call the others scripts as usual. The body tag contains an explanation of the pano, which the user will see in Page mode.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">body</span> <span class="nx">style</span><span class="o">=</span><span class="s2">"background-color:rgba(255,255,255,0.7)"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">Panorama</span> <span class="nx">as</span> <span class="nx">reality</span> <span class="p">(</span><span class="nx">background</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">This</span> <span class="nx">example</span> <span class="nx">illustrate</span> <span class="nx">the</span> <span class="nx">use</span> <span class="nx">of</span> <span class="nx">a</span> <span class="nx">panorama</span> <span class="nx">as</span> <span class="nx">an</span> <span class="nx">Argon</span> <span class="nx">reality</span><span class="p">...</span>
+        <span class="p">...</span>
+      <span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/body&gt;</span></code></pre></figure>
+
+<h3 id="code-file-appjs">Code file (app.js)</h3>
+<p>To begin we define the immersive Context to be a panorama (instead of the device’s camera, which is the default).</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js">  <span class="kd">var</span> <span class="nx">panoramaReality</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Argon</span><span class="p">.</span><span class="nx">Reality</span><span class="p">.</span><span class="nx">Panorama</span><span class="p">;</span>
+  <span class="nx">Argon</span><span class="p">.</span><span class="nx">immersiveContext</span><span class="p">.</span><span class="nx">setRequiredReality</span><span class="p">(</span><span class="nx">panoramaReality</span><span class="p">);</span></code></pre></figure>
+
+<p>Now we create the panorama itself.</p>
+
+<h3 id="the-equirectangular-panorama">The equirectangular panorama</h3>
+<p>For the equirectangular image pano, we specify that type and the source.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">pano1</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s1">'equirectangular'</span><span class="p">,</span>
+    <span class="na">source</span><span class="p">:</span> <span class="s1">'pano2.jpg'</span><span class="p">,</span>
+    <span class="na">headingOffset</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+    <span class="na">cartographicDegrees</span><span class="p">:</span> <span class="p">[</span><span class="mf">33.7758</span><span class="p">,</span><span class="mf">84.3947</span><span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>The headingOffset indicates where north is defined in the panorama (in degrees from 0 to 359). If the center of the pano image is north, then the headingOffset is 0, as indicated here. The variable cartographicDegrees indicates the geolocation of the Panorama: where the image was taken or where we want to represent the image as being located on the earth.</p>
+
+<h3 id="the-skybox-6-panel-panorama">The skybox (6 panel) panorama</h3>
+<p>To create a skybox pano, the code is:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">pano2</span><span class="o">=</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s1">'skybox'</span><span class="p">,</span>
+    <span class="na">source</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">up</span><span class="p">:</span> <span class="s1">'woodruff/up.png'</span><span class="p">,</span>
+        <span class="na">down</span><span class="p">:</span> <span class="s1">'woodruff/down.png'</span><span class="p">,</span>
+        <span class="na">north</span><span class="p">:</span> <span class="s1">'woodruff/north.png'</span><span class="p">,</span>
+        <span class="na">east</span><span class="p">:</span> <span class="s1">'woodruff/east.png'</span><span class="p">,</span>
+        <span class="na">south</span><span class="p">:</span> <span class="s1">'woodruff/south.png'</span><span class="p">,</span>
+        <span class="na">west</span><span class="p">:</span> <span class="s1">'woodruff/west.png'</span>
+            <span class="p">},</span>
+    <span class="na">headingOffset</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+    <span class="na">cartographicDegrees</span><span class="p">:</span> <span class="p">[</span><span class="mf">33.7758</span><span class="p">,</span><span class="mf">84.3947</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Here we specific a set of six images.</p>
+
+<h3 id="set-the-panorama-as-the-reality">Set the panorama as the reality</h3>
+
+<p>We only need one of the above types for any given panorama reality. In either case, we set the panoramaReality to the pano created. So either:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">panoramaReality</span><span class="p">.</span><span class="nx">setPanorama</span><span class="p">(</span><span class="nx">pano1</span><span class="p">);</span></code></pre></figure>
+
+<p>or</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">panoramaReality</span><span class="p">.</span><span class="nx">setPanorama</span><span class="p">(</span><span class="nx">pano2</span><span class="p">);</span></code></pre></figure>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/tutorials/WelcomePage.html">
+            Welcome
+            <small>01 Mar 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/tutorials/Tutorial6.html">
+            Tutorial 6 - Using Argon.js with Vuforia
+            <small>01 Mar 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/tutorials/Tutorial5.html">
+            Tutorial 5 - Geolocation
+            <small>01 Mar 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,7 +1,18 @@
-name: Argon.js Tutorials
-markdown: redcarpet
-highlighter: pygments
-destination: _site/
-permalink: tutorials/:title.html
-description: Argon.js tutorial site.
-baseurl: http://argonjs.github.io/argon-tutorials
+permalink:           tutorials/:title.html
+gems: [jekyll-paginate]
+
+# Setup
+title:               Argonjs
+tagline:             'Tutorials'
+description:         'This site contains a collection of tutorials for web developers using <a href="http://argonjs.io" target="_blank">argon.js</a> to add AR content to a web application.'
+url:                 http://argonjs-tutorial.io
+baseurl:             ''
+paginate:            5
+
+# About/contact
+author:
+  name:
+  email:
+
+# Custom vars
+version:             1.0.0
