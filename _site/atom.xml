@@ -4,7 +4,7 @@
  <title>Argonjs</title>
  <link href="http://argonjs-tutorial.io/atom.xml" rel="self"/>
  <link href="http://argonjs-tutorial.io/"/>
- <updated>2016-03-08T13:47:44-05:00</updated>
+ <updated>2016-03-08T14:38:33-05:00</updated>
  <id>http://argonjs-tutorial.io</id>
  <author>
    <name></name>
@@ -20,18 +20,18 @@
    <content type="html">&lt;p&gt;This site contains a collection of tutorials for web developers using argon.js to add AR content to a web application. On this page, we provide an overview of the design of argon.js, introducing the terminology and concepts used by the framework. In the tutorials, we will go through a sequence of examples that show how to leverage the various features of argon.js in a web application.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/tutorials/Tutorial1&quot;&gt;Tutorial 1 - Getting Started&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/tutorials/Tutorial2&quot;&gt;Tutorial 2 - Compass&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/tutorials/Tutorial3&quot;&gt;Tutorial 3 - Periodic table&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/tutorials/utorial4&quot;&gt;Tutorial 4 - Panorama Reality&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/tutorials/Tutorial5&quot;&gt;Tutorial 5 - Geolocation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;tutorials/Tutorial1&quot;&gt;Tutorial 1 - Getting Started&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;tutorials/Tutorial2&quot;&gt;Tutorial 2 - Compass&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;tutorials/Tutorial3&quot;&gt;Tutorial 3 - Periodic table&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;tutorials/utorial4&quot;&gt;Tutorial 4 - Panorama Reality&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;tutorials/Tutorial5&quot;&gt;Tutorial 5 - Geolocation&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;/tutorials/Tutorial6&quot;&gt;Tutorial 6 - Using Argon.js with Vuforia&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;tutorials/Tutorial6&quot;&gt;Tutorial 6 - Using Argon.js with Vuforia&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;For more information about Argon3, please visit &lt;a href=&quot;/tutorials/Overview&quot;&gt;overview&lt;/a&gt;.&lt;/p&gt;
+    &lt;p&gt;For more information about Argon3, please visit &lt;a href=&quot;tutorials/Overview&quot;&gt;overview&lt;/a&gt;.&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;Download open-source Argon.js framework from Argonjs &lt;a href=&quot;https://github.com/argonjs/argon.js&quot;&gt;Github repository&lt;/a&gt; and &lt;a href=&quot;/argon-tutorials.zip&quot;&gt;Download&lt;/a&gt; tutorials source files from this site&lt;/li&gt;
+  &lt;li&gt;Download open-source Argon.js framework from Argonjs &lt;a href=&quot;https://github.com/argonjs/argon.js&quot;&gt;Github repository&lt;/a&gt; and &lt;a href=&quot;/argon-tutorials//argon-tutorials.zip&quot;&gt;Download&lt;/a&gt; tutorials source files from this site&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;The initial release of argon.js works primarily in the &lt;a href=&quot;https://itunes.apple.com/us/app/argon3/id944297993?ls=1&amp;amp;mt=8&quot;&gt;Argon3&lt;/a&gt; browser for iOS, and these tutorials focus specifically on using argon.js to create and debug AR web applications for the Argon3 browser. As additional support is added to argon.js for other platforms, we will expand the tutorials as appropriate.&lt;/p&gt;
@@ -765,7 +765,7 @@ Download &lt;a href=&quot;https://itunes.apple.com/us/app/argon3/id944297993?ls=
 
 &lt;p&gt;Step 4: Install &lt;a href=&quot;https://itunes.apple.com/us/app/argon3/id944297993?ls=1&amp;amp;mt=8&quot;&gt;Argon3&lt;/a&gt;  from the App Store onto an iOS device.&lt;/p&gt;
 
-&lt;p&gt;Step 5: Access your server from the Argon3 mobile browser and open the folder containing your newly unzipped files. The path is: &lt;em&gt;argon.js/dist/examples/tutotial1&lt;/em&gt;. or &lt;a href=&quot;/argon-tutorials.zip&quot;&gt;Download&lt;/a&gt; tutorials source files from this site.&lt;/p&gt;
+&lt;p&gt;Step 5: Access your server from the Argon3 mobile browser and open the folder containing your newly unzipped files. The path is: &lt;em&gt;argon.js/dist/examples/tutotial1&lt;/em&gt;. or &lt;a href=&quot;/argon-tutorials//argon-tutorials.zip&quot;&gt;Download&lt;/a&gt; tutorials source files from this site.&lt;/p&gt;
 
 &lt;p&gt;Step 6: You should see an icon on the corner of your screen. This means you have completed the tutorial!&lt;/p&gt;
 
