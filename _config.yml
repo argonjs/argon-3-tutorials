@@ -6,7 +6,7 @@ title:               Argonjs
 tagline:             'Tutorials'
 description:         'This site contains a collection of tutorials for web developers using <a href="http://argonjs.io" target="_blank">argon.js</a> to add AR content to a web application.'
 url:                 http://argonjs-tutorial.io
-baseurl:             '/argon-tutorials/'
+baseurl:             ''
 paginate:            5
 
 # About/contact
