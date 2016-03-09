@@ -5,7 +5,7 @@ gems: [jekyll-paginate]
 title:               Argonjs
 tagline:             'Tutorials'
 description:         'This site contains a collection of tutorials for web developers using <a href="http://argonjs.io" target="_blank">argon.js</a> to add AR content to a web application.'
-url:                 http://argonjs-tutorial.io
+url:                 http://tutorials.argonjs.io
 baseurl:             '/'
 paginate:            5
 
