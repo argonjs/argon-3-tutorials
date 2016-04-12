@@ -12,9 +12,9 @@ This site contains a collection of tutorials for web developers using argon.js t
 * [Tutorial 5 - Geolocation]({{ site.baseurl }}tutorials/tutorial5)
 * [Tutorial 6 - Using Argon.js with Vuforia]({{ site.baseurl }}tutorials/tutorial6)
 
-* For more information about Argon3, please visit [overview](tutorials/Overview).
+* For more information about Argon3, please visit [overview]({{ site.baseurl }}tutorials/Overview).
 
-* Download open-source Argon.js framework from Argonjs [Github repository](https://github.com/argonjs/argon.js) and <a href="{{ site.baseurl }}/argon-tutorials.zip">Download</a> tutorials source files from this site
+* Download open-source Argon.js framework from Argonjs [Github repository](https://github.com/argonjs/argon.js) or <a href="{{ site.baseurl }}code.zip">Download</a> Argon.js source files from this site
 
 The initial release of argon.js works primarily in the [Argon3](https://itunes.apple.com/us/app/argon3/id944297993?ls=1&mt=8) browser for iOS, and these tutorials focus specifically on using argon.js to create and debug AR web applications for the Argon3 browser. As additional support is added to argon.js for other platforms, we will expand the tutorials as appropriate.
 
