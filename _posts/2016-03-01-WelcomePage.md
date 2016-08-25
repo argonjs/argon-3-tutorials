@@ -3,7 +3,7 @@ layout: post
 title: Welcome
 ---
 
-# Deprecated Pending imminent release of Argon4
+# --- Deprecated Pending imminent release of Argon4 ---
 
 This site contains a collection of tutorials for web developers using argon.js to add AR content to a web application. On this page, we provide an overview of the design of argon.js, introducing the terminology and concepts used by the framework. In the tutorials, we will go through a sequence of examples that show how to leverage the various features of argon.js in a web application.
 
